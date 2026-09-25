@@ -1,0 +1,12 @@
+# 13 — Tratamento de dados (LGPD)
+
+> Projeto Acompanha (TIAPN, PUC Minas Contagem). Como o sistema protege os dados das crianças, com base no art. 14 da LGPD. Índice geral: [README](../README.md).
+
+- **Papéis.** A Divertindo a Mente, representada pela proprietária, é a controladora dos dados. Supabase e Cloudflare atuam como operadores (hospedagem). Durante o desenvolvimento, a equipe usará apenas dados fictícios; dados reais só entram no sistema depois da implantação e do consentimento.
+- **Melhor interesse da criança (art. 14, caput).** Os dados são usados exclusivamente para o acompanhamento pedagógico do próprio aluno. Não há uso para publicidade, ranking entre alunos ou compartilhamento com terceiros.
+- **Base legal e consentimento (art. 14, §1º e §5º).** O grupo adota o consentimento específico e destacado de pelo menos um dos pais ou responsável legal, coletado no cadastro por termo assinado ou por aceite no primeiro acesso, e registrado no sistema com data e versão do termo (RF03, RN08). A ANPD admite outras bases legais para dados de crianças (Enunciado CD/ANPD nº 1/2023), mas o consentimento é o caminho mais simples e transparente para este caso.
+- **Minimização.** Não coletamos CPF, endereço, fotos ou diagnósticos de saúde dos alunos (RN12). As observações são estritamente pedagógicas.
+- **Autorização por vínculo.** Controle por papel não basta: o responsável só vê os alunos vinculados a ele, com checagem no servidor em toda requisição (RN07, RNF07). Tentativas de acessar outro aluno são negadas e registradas (RNF08).
+- **Transparência (art. 14, §2º e §6º).** Página de privacidade em linguagem simples, dizendo quais dados são coletados, para quê, quem acessa, por quanto tempo e como pedir a exclusão (RF18).
+- **Encerramento e eliminação (arts. 15, 16 e 18).** Ao encerrar a matrícula, o acesso dos responsáveis é bloqueado na hora e os dados são eliminados após 6 meses (RN09). Pedido de revogação ou exclusão: bloqueio no mesmo dia e eliminação em até 15 dias (RN10). Podem ser mantidas apenas estatísticas anonimizadas (art. 16, IV).
+- **ECA Digital (Lei 15.211/2025).** Em vigor desde março de 2026, a lei trata de produtos digitais voltados a crianças ou com acesso provável por elas. Como os alunos não são usuários do Acompanha e o sistema não é direcionado a eles, o grupo entende que ela não se aplica diretamente; ainda assim, as práticas acima seguem a mesma linha de proteção.
