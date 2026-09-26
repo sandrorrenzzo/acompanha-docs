@@ -1,7 +1,5 @@
 # 01 — Processos de negócio
 
-> Projeto Acompanha (TIAPN, PUC Minas Contagem). Processos que serão modelados em BPMN (situação atual e proposta). Índice geral: [00 — Início](00-inicio.md).
-
 | Processo | Quem executa | Observação |
 |---|---|---|
 | Cadastro do aluno e coleta do consentimento | Professora + responsável | Aluno só fica ativo com consentimento registrado (RN08). |
