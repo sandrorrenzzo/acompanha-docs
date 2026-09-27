@@ -1,4 +1,4 @@
-# 01 — Processos de negócio
+# 01. Processos de negócio
 
 | Processo | Quem executa | Observação |
 |---|---|---|
