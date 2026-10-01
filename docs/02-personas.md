@@ -9,7 +9,7 @@ Nos documentos aparecem apenas o primeiro nome e a idade da pessoa entrevistada;
 ### P1: Ieronildes (Nide), 44 anos, proprietária e professora principal (usuária operadora)
 
 - Contexto: Dona da escolinha, onde trabalha há 2 anos. Atende os alunos de todas as séries até o 5º ano. Além de dar aula, cuida das matrículas e da conversa com as famílias.
-- Rotina: Dia movimentado. Acompanha os alunos nas atividades e tarefas escolares, tira dúvidas, ajuda nas matérias em que eles têm dificuldade e prepara atividades de reforço de acordo com a necessidade de cada um.
+- Rotina: Dia movimentado, com demanda bastante corrida. Acompanha os alunos nas atividades e tarefas escolares, tira dúvidas, ajuda nas matérias em que eles têm dificuldade e prepara atividades de reforço de acordo com a necessidade de cada um. Cada aluno tem um caderno próprio na escolinha, onde ela aplica atividades com base no que ele está estudando no colégio.
 - Como registra hoje: Usa uma planilha no Drive só para o controle financeiro (mensalidades). Já tentou anotar aulas, tarefas e notas nela, mas parou por falta de tempo. Hoje o acompanhamento pedagógico não é registrado em lugar nenhum, e o retorno aos pais é feito de boca.
 - Como identifica reforço: Aplica uma avaliação diagnóstica para encontrar as principais dificuldades do aluno e observa o desempenho dele nas atividades do dia a dia. Considera a escala de 0 a 10 e a média 6,0 dentro do esperado, "mas sempre queremos um 10".
 - Frustrações: Uma informação já se perdeu: ela não foi avisada de um trabalho de História do 3º ano, de 10 pontos, e ele não foi registrado.
