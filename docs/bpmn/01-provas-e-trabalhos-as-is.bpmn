@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_P05AsIs" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:collaboration id="Collaboration_P05AsIs">
+    <bpmn:participant id="Participant_P05AsIs" name="1. Provas e trabalhos do colégio (AS-IS)" processRef="Process_P05AsIs" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_P05AsIs" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_P05AsIs">
+      <bpmn:lane id="P05AsIs_Lane_A" name="Aluno">
+        <bpmn:flowNodeRef>P05AsIs_ini</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_sabe</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_nsabe</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_traz</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_nnota</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="P05AsIs_Lane_P" name="Professora">
+        <bpmn:flowNodeRef>P05AsIs_estuda</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_data</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_olha</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_ruim</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_ok</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_avisa</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="P05AsIs_Lane_R" name="Responsável">
+        <bpmn:flowNodeRef>P05AsIs_ouve</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P05AsIs_rfim</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="P05AsIs_ini" name="Colégio marca prova ou trabalho">
+      <bpmn:outgoing>Flow_P05AsIs_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="P05AsIs_sabe" name="Aluno avisa a professora?">
+      <bpmn:incoming>Flow_P05AsIs_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_P05AsIs_2</bpmn:outgoing>
+      <bpmn:outgoing>Flow_P05AsIs_3</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="P05AsIs_nsabe" name="Prova ou trabalho sem preparação">
+      <bpmn:incoming>Flow_P05AsIs_3</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:manualTask id="P05AsIs_estuda" name="Ajuda o aluno a estudar ou a fazer o trabalho">
+      <bpmn:incoming>Flow_P05AsIs_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_P05AsIs_4</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:intermediateCatchEvent id="P05AsIs_data" name="Data da prova ou da entrega">
+      <bpmn:incoming>Flow_P05AsIs_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_P05AsIs_5</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerDef_P05AsIs_data" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:exclusiveGateway id="P05AsIs_traz" name="Aluno mostra a nota?">
+      <bpmn:incoming>Flow_P05AsIs_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_P05AsIs_6</bpmn:outgoing>
+      <bpmn:outgoing>Flow_P05AsIs_7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="P05AsIs_nnota" name="Professora não sabe o resultado">
+      <bpmn:incoming>Flow_P05AsIs_7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:manualTask id="P05AsIs_olha" name="Vê a nota, sem registrar">
+      <bpmn:incoming>Flow_P05AsIs_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_P05AsIs_8</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:exclusiveGateway id="P05AsIs_ruim" name="Foi mal na matéria?">
+      <bpmn:incoming>Flow_P05AsIs_8</bpmn:incoming>
+      <bpmn:outgoing>Flow_P05AsIs_9</bpmn:outgoing>
+      <bpmn:outgoing>Flow_P05AsIs_10</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="P05AsIs_ok" name="Nada é feito">
+      <bpmn:incoming>Flow_P05AsIs_9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:manualTask id="P05AsIs_avisa" name="Fala com o responsável que o aluno precisa estudar mais a matéria">
+      <bpmn:incoming>Flow_P05AsIs_10</bpmn:incoming>
+      <bpmn:outgoing>Flow_P05AsIs_11</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="P05AsIs_ouve" name="Recebe o aviso verbal">
+      <bpmn:incoming>Flow_P05AsIs_11</bpmn:incoming>
+      <bpmn:outgoing>Flow_P05AsIs_12</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="P05AsIs_rfim" name="Aviso sem histórico">
+      <bpmn:incoming>Flow_P05AsIs_12</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_P05AsIs_1" sourceRef="P05AsIs_ini" targetRef="P05AsIs_sabe" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_2" name="Sim" sourceRef="P05AsIs_sabe" targetRef="P05AsIs_estuda" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_3" name="Não" sourceRef="P05AsIs_sabe" targetRef="P05AsIs_nsabe" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_4" sourceRef="P05AsIs_estuda" targetRef="P05AsIs_data" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_5" sourceRef="P05AsIs_data" targetRef="P05AsIs_traz" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_6" name="Sim" sourceRef="P05AsIs_traz" targetRef="P05AsIs_olha" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_7" name="Não" sourceRef="P05AsIs_traz" targetRef="P05AsIs_nnota" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_8" sourceRef="P05AsIs_olha" targetRef="P05AsIs_ruim" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_9" name="Não" sourceRef="P05AsIs_ruim" targetRef="P05AsIs_ok" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_10" name="Sim" sourceRef="P05AsIs_ruim" targetRef="P05AsIs_avisa" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_11" sourceRef="P05AsIs_avisa" targetRef="P05AsIs_ouve" />
+    <bpmn:sequenceFlow id="Flow_P05AsIs_12" sourceRef="P05AsIs_ouve" targetRef="P05AsIs_rfim" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_P05AsIs">
+    <bpmndi:BPMNPlane id="BPMNPlane_P05AsIs" bpmnElement="Collaboration_P05AsIs">
+      <bpmndi:BPMNShape id="Participant_P05AsIs_di" bpmnElement="Participant_P05AsIs" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1770" height="700" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_Lane_A_di" bpmnElement="P05AsIs_Lane_A" isHorizontal="true">
+        <dc:Bounds x="190" y="80" width="1740" height="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_Lane_P_di" bpmnElement="P05AsIs_Lane_P" isHorizontal="true">
+        <dc:Bounds x="190" y="360" width="1740" height="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_Lane_R_di" bpmnElement="P05AsIs_Lane_R" isHorizontal="true">
+        <dc:Bounds x="190" y="640" width="1740" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_ini_di" bpmnElement="P05AsIs_ini">
+        <dc:Bounds x="287" y="132" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_sabe_di" bpmnElement="P05AsIs_sabe" isMarkerVisible="true">
+        <dc:Bounds x="450" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="415" y="81" width="120" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_nsabe_di" bpmnElement="P05AsIs_nsabe">
+        <dc:Bounds x="457" y="272" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_estuda_di" bpmnElement="P05AsIs_estuda">
+        <dc:Bounds x="585" y="385" width="120" height="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_data_di" bpmnElement="P05AsIs_data">
+        <dc:Bounds x="797" y="412" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_traz_di" bpmnElement="P05AsIs_traz" isMarkerVisible="true">
+        <dc:Bounds x="960" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="925" y="81" width="120" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_nnota_di" bpmnElement="P05AsIs_nnota">
+        <dc:Bounds x="967" y="272" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_olha_di" bpmnElement="P05AsIs_olha">
+        <dc:Bounds x="1095" y="385" width="120" height="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_ruim_di" bpmnElement="P05AsIs_ruim" isMarkerVisible="true">
+        <dc:Bounds x="1300" y="405" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1265" y="361" width="120" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_ok_di" bpmnElement="P05AsIs_ok">
+        <dc:Bounds x="1307" y="552" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_avisa_di" bpmnElement="P05AsIs_avisa">
+        <dc:Bounds x="1435" y="385" width="120" height="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_ouve_di" bpmnElement="P05AsIs_ouve">
+        <dc:Bounds x="1605" y="665" width="120" height="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P05AsIs_rfim_di" bpmnElement="P05AsIs_rfim">
+        <dc:Bounds x="1817" y="692" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_1_di" bpmnElement="Flow_P05AsIs_1">
+        <di:waypoint x="323" y="150" />
+        <di:waypoint x="450" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_2_di" bpmnElement="Flow_P05AsIs_2">
+        <di:waypoint x="500" y="150" />
+        <di:waypoint x="542.5" y="150" />
+        <di:waypoint x="542.5" y="430" />
+        <di:waypoint x="585" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_3_di" bpmnElement="Flow_P05AsIs_3">
+        <di:waypoint x="475" y="175" />
+        <di:waypoint x="475" y="272" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_4_di" bpmnElement="Flow_P05AsIs_4">
+        <di:waypoint x="705" y="430" />
+        <di:waypoint x="797" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_5_di" bpmnElement="Flow_P05AsIs_5">
+        <di:waypoint x="833" y="430" />
+        <di:waypoint x="896.5" y="430" />
+        <di:waypoint x="896.5" y="150" />
+        <di:waypoint x="960" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_6_di" bpmnElement="Flow_P05AsIs_6">
+        <di:waypoint x="1010" y="150" />
+        <di:waypoint x="1052.5" y="150" />
+        <di:waypoint x="1052.5" y="430" />
+        <di:waypoint x="1095" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_7_di" bpmnElement="Flow_P05AsIs_7">
+        <di:waypoint x="985" y="175" />
+        <di:waypoint x="985" y="272" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_8_di" bpmnElement="Flow_P05AsIs_8">
+        <di:waypoint x="1215" y="430" />
+        <di:waypoint x="1300" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_9_di" bpmnElement="Flow_P05AsIs_9">
+        <di:waypoint x="1325" y="455" />
+        <di:waypoint x="1325" y="552" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_10_di" bpmnElement="Flow_P05AsIs_10">
+        <di:waypoint x="1350" y="430" />
+        <di:waypoint x="1435" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_11_di" bpmnElement="Flow_P05AsIs_11">
+        <di:waypoint x="1555" y="430" />
+        <di:waypoint x="1580" y="430" />
+        <di:waypoint x="1580" y="710" />
+        <di:waypoint x="1605" y="710" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P05AsIs_12_di" bpmnElement="Flow_P05AsIs_12">
+        <di:waypoint x="1725" y="710" />
+        <di:waypoint x="1817" y="710" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
