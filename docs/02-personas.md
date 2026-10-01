@@ -16,7 +16,7 @@ Nos documentos aparecem apenas o primeiro nome e a idade da pessoa entrevistada;
 - O que as famílias perguntam: Pedem notícias com bastante frequência. Querem saber como está o desenvolvimento da criança, se ela está avançando na aprendizagem e se fez todas as tarefas.
 - Objetivos: Ver, ao abrir o sistema, o desenvolvimento de cada aluno, as atividades e trabalhos pendentes, as notas, as matérias com mais dificuldade e o que precisa ser reforçado.
 - Fala: "Eu queria abrir o sistema e já ver o desenvolvimento de cada aluno, as atividades e trabalhos pendentes, as notas, as matérias em que apresenta mais dificuldade e o que precisa ser reforçado."
-- Tecnologia: Usa um computador LG e um celular Xiaomi.
+- Tecnologia: Usa um computador com monitor LG e um celular Xiaomi.
 
 ### P2: Shirlei, 49 anos, professora auxiliar (usuária operadora)
 
