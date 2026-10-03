@@ -4,63 +4,24 @@ Se o aluno não avisa, a prova ou o trabalho passa sem preparação (já acontec
 
 O modelo está em [01-provas-e-trabalhos-as-is.bpmn](../bpmn/01-provas-e-trabalhos-as-is.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
 
+Participam do processo o aluno, a professora e o responsável. Nenhuma atividade usa sistema: todas são tarefas manuais.
+
+#### Fluxo
+
+1. O colégio marca uma prova ou um trabalho.
+2. **O aluno avisa a professora?** Se não avisa, o processo termina com a prova ou o trabalho **sem preparação**.
+3. Se avisa, a professora ajuda o aluno a estudar ou a fazer o trabalho.
+4. Chega a data da prova ou da entrega.
+5. **O aluno mostra a nota?** Se não mostra, o processo termina e a **professora não sabe o resultado**.
+6. Se mostra, a professora vê a nota, sem registrar.
+7. **Foi mal na matéria?** Se não, **nada é feito**.
+8. Se foi mal, a professora fala com o responsável que o aluno precisa estudar mais a matéria, e o responsável recebe o aviso verbal. O processo termina com um **aviso sem histórico**.
+
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
-
-_Os tipos de dados a serem utilizados são:_
-
-_* **Área de texto** - campo texto de múltiplas linhas_
-
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
-
-
-**Nome da atividade 1**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do processo de cadastro |                   |
-
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| **Atividade** | **Quem executa** | **Como é feito hoje** | **Problema** |
+| --- | --- | --- | --- |
+| Ajuda o aluno a estudar ou a fazer o trabalho | Professora | Na aula, com o caderno do aluno na escolinha | Só acontece se o aluno avisou da prova ou do trabalho |
+| Vê a nota, sem registrar | Professora | O aluno mostra a prova ou o boletim | A nota não fica guardada, e não há média por matéria |
+| Fala com o responsável que o aluno precisa estudar mais a matéria | Professora | De boca | A decisão depende da memória e da percepção da professora |
+| Recebe o aviso verbal | Responsável | Conversa com a professora | Não há histórico para consultar depois |

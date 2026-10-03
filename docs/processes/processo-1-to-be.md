@@ -4,63 +4,59 @@ A prova ou o trabalho é cadastrado com a data assim que a professora fica saben
 
 O modelo está em [01-provas-e-trabalhos-to-be.bpmn](../bpmn/01-provas-e-trabalhos-to-be.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
 
+Participam do processo a professora e o Sistema Acompanha.
+
+#### Fluxo
+
+1. A professora fica sabendo de uma prova ou de um trabalho, pelo aluno ou pela família.
+2. Cadastra a prova ou o trabalho com matéria, origem e data, sem nota.
+3. O sistema mostra o item no painel de pendências da professora e na visão da semana do responsável.
+4. A professora ajuda o aluno a se preparar.
+5. Chega a data da prova ou da entrega.
+6. A professora corrige ou recebe a nota do colégio e lança a nota no sistema.
+7. O sistema salva a nota, recalcula a média da matéria e sinaliza reforço se a média ficar abaixo de 6,0. O processo termina com a **nota registrada**.
+
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+**Cadastra com matéria, origem e data, sem nota** (tarefa de usuário, professora)
 
-_Os tipos de dados a serem utilizados são:_
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Aluno | Seleção única | Obrigatório; só alunos ativos | |
+| Tipo | Seleção única | Obrigatório; Prova ou Trabalho | |
+| Matéria | Seleção única | Obrigatório; matérias acompanhadas pelo aluno | |
+| Origem | Seleção única | Obrigatório; Colégio ou Reforço | |
+| Data | Data | Obrigatório; data da prova ou da entrega | |
+| Descrição | Caixa de texto | Obrigatório | |
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+| **Comandos** | **Destino** | **Tipo** |
+| --- | --- | --- |
+| Salvar | Mostra no painel e na semana do responsável | default |
+| Cancelar | Fim do processo, sem cadastro | cancel |
 
-_* **Caixa de texto** - campo texto de uma linha_
+**Mostra no painel e na semana do responsável** (tarefa de serviço)
 
-_* **Número** - campo numérico_
+O item aparece no painel de pendências, na categoria de provas e trabalhos dos próximos 7 dias. Também aparece na visão da semana do responsável vinculado ao aluno quando a data cai na semana atual.
 
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
+**Ajuda o aluno a se preparar** e **Corrige ou recebe a nota do colégio** (tarefas manuais)
 
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
+Feitas fora do sistema, na aula.
 
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
+**Lança a nota** (tarefa de usuário, professora)
 
-_* **Imagem** - campo contendo uma imagem_
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Nota | Número | Obrigatório; de 0,0 a 10,0, com uma casa decimal | |
 
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
+| **Comandos** | **Destino** | **Tipo** |
+| --- | --- | --- |
+| Salvar | Salva a nota e recalcula a média da matéria | default |
+| Cancelar | O item continua sem nota | cancel |
 
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
+**Salva a nota e recalcula a média da matéria** (tarefa de serviço)
 
-_* **Arquivo** - campo de upload de documento_
+A média da matéria é a média aritmética das notas das 3 provas ou trabalhos mais recentes do aluno naquela matéria, do colégio ou do reforço (ou de todas, se houver menos de 3). A avaliação diagnóstica não entra na média.
 
-_* **Link** - campo que armazena uma URL_
+**Sinaliza reforço se a média ficar abaixo de 6,0** (tarefa de serviço)
 
-_* **Tabela** - campo formado por uma matriz de valores_
-
-
-**Nome da atividade 1**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do processo de cadastro |                   |
-
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+Se a média da matéria ficar abaixo de 6,0, com pelo menos 2 notas, o aluno passa a ser sinalizado para reforço na matéria, e a sinalização aparece no painel de pendências. A sinalização automática sai sozinha quando a média volta a 6,0 ou mais. O limite de 6,0 é configurável.

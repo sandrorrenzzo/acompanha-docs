@@ -4,63 +4,91 @@ O responsável consulta sozinho, a qualquer hora, apenas os alunos vinculados a 
 
 O modelo está em [02-consulta-do-progresso-to-be.bpmn](../bpmn/02-consulta-do-progresso-to-be.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
 
+Participam do processo o responsável, o Sistema Acompanha e a professora.
+
+#### Fluxo
+
+1. O responsável quer saber como o filho está e faz login com e-mail e senha.
+2. **Tem vínculo ativo com algum aluno?** Se não tem, o processo termina com **acesso negado e registrado**.
+3. **Tem mais de um aluno vinculado?** Se tem, o sistema lista os alunos vinculados e o responsável escolhe um.
+4. O sistema mostra a semana do aluno: última aula, tarefas e provas e trabalhos.
+5. O responsável consulta a semana do filho.
+6. **Quer ver o relatório do período?** Se não, o processo termina com o responsável **informado sobre a semana**.
+7. Se quer, o sistema monta o relatório do mês ou do bimestre e o responsável lê o relatório. O processo termina com o responsável **informado**.
+
+Em paralelo, no fim do mês ou do bimestre, a professora escreve a observação pedagógica do período, que fica disponível no relatório.
+
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+**Faz login com e-mail e senha** (tarefa de usuário, responsável)
 
-_Os tipos de dados a serem utilizados são:_
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| E-mail | Caixa de texto | Obrigatório; formato de e-mail | |
+| Senha | Caixa de texto | Obrigatório; mínimo de 8 caracteres; tentativas limitadas por usuário e por IP | |
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+| **Comandos** | **Destino** | **Tipo** |
+| --- | --- | --- |
+| Entrar | Vínculo ativo com algum aluno? | default |
 
-_* **Caixa de texto** - campo texto de uma linha_
+**Vínculo ativo com algum aluno?** (decisão do sistema)
 
-_* **Número** - campo numérico_
+O responsável só acessa alunos com vínculo ativo com ele. A verificação é feita no servidor em toda requisição. Tentativas de acessar outro aluno são negadas e ficam no registro de acessos.
 
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
+**Lista os alunos vinculados** (tarefa de serviço) e **Escolhe o aluno** (tarefa de usuário, responsável)
 
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Aluno | Seleção única | Só alunos vinculados ao responsável | |
 
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
+| **Comandos** | **Destino** | **Tipo** |
+| --- | --- | --- |
+| Abrir | Mostra a semana | default |
 
-_* **Imagem** - campo contendo uma imagem_
+**Mostra a semana: última aula, tarefas e provas** (tarefa de serviço) e **Consulta a semana do filho** (tarefa de usuário, responsável)
 
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
+Tela somente leitura, feita para o celular (de 360 px de largura em diante, sem rolagem horizontal).
 
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Data da última aula | Data | Somente leitura | |
+| Conteúdos trabalhados na última aula | Área de texto | Somente leitura | |
+| Tarefas pendentes ou com prazo na semana | Tabela | Somente leitura; matéria, descrição, prazo e status | |
+| Provas e trabalhos com data na semana | Tabela | Somente leitura; matéria, tipo e data | |
 
-_* **Arquivo** - campo de upload de documento_
+| **Comandos** | **Destino** | **Tipo** |
+| --- | --- | --- |
+| Ver relatório | Monta o relatório do mês ou bimestre | default |
+| Avisar tarefa feita | Aviso no painel da professora; não muda o status da tarefa | |
+| Trocar de aluno | Escolhe o aluno | |
+| Sair | Fim do processo | cancel |
 
-_* **Link** - campo que armazena uma URL_
+**Monta o relatório do mês ou bimestre** (tarefa de serviço) e **Lê o relatório de progresso** (tarefa de usuário, responsável)
 
-_* **Tabela** - campo formado por uma matriz de valores_
+Relatório somente leitura. O período (mês ou bimestre) é escolhido pela professora.
 
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Identificação | Caixa de texto | Nome do aluno, ano escolar e período do relatório | |
+| Frequência | Número | Aulas com presença sobre aulas registradas no período, em número e porcentagem | |
+| Desempenho por matéria | Tabela | Notas do período com a origem, média da matéria e situação ("Em dia" ou "Precisa de atenção") | |
+| Conteúdos trabalhados | Tabela | Lista resumida dos conteúdos das aulas, por matéria | |
+| Tarefas | Tabela | Atribuídas, entregues no prazo, entregues com atraso, não entregues, pendentes e taxa de entrega no prazo | |
+| Observação da professora | Área de texto | Somente leitura | |
 
-**Nome da atividade 1**
+| **Comandos** | **Destino** | **Tipo** |
+| --- | --- | --- |
+| Voltar | Consulta a semana do filho | default |
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+**Escreve a observação pedagógica do período** (tarefa de usuário, professora)
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do processo de cadastro |                   |
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Aluno | Seleção única | Obrigatório | |
+| Período | Seleção única | Obrigatório; mês ou bimestre | |
+| Observação | Área de texto | Obrigatório; só termos pedagógicos, sem diagnósticos médicos ou laudos | |
 
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| **Comandos** | **Destino** | **Tipo** |
+| --- | --- | --- |
+| Salvar | Observação disponível no relatório | default |
+| Cancelar | Fim, sem observação | cancel |

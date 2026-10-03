@@ -23,12 +23,15 @@ Isso traz dois problemas mais evidentes:
 
 ## Objetivos
 
-Aqui, você deve descrever os objetivos do trabalho, indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima.
+O objetivo geral é desenvolver um sistema web que registre o acompanhamento pedagógico de cada aluno da Divertindo a Mente e permita aos responsáveis consultar o progresso dos próprios filhos.
 
-Além disso, apresente alguns (pelo menos 3) objetivos específicos, dependendo de onde você pretende concentrar sua prática investigativa ou como deseja aprofundar seu trabalho.
+Os objetivos específicos são:
 
-> **Links úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+- Registrar aulas, presença, tarefas, provas, trabalhos, notas e avaliações diagnósticas de cada aluno, numa tela simples que caiba na rotina corrida das professoras.
+- Mostrar à professora, ao abrir o sistema, um painel com o que está atrasado, o que vence nos próximos dias e quem precisa de reforço.
+- Sinalizar automaticamente a necessidade de reforço quando a média da matéria fica abaixo de 6,0, além de permitir a marcação manual.
+- Oferecer ao responsável, pelo celular, a visão da semana e o relatório de progresso do mês ou do bimestre, somente dos alunos vinculados a ele.
+- Tratar os dados das crianças conforme a LGPD, com consentimento registrado, acesso restrito por vínculo e eliminação dos dados no encerramento ou a pedido do responsável.
 
 ## Justificativa
 

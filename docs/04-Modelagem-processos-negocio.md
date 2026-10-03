@@ -50,15 +50,13 @@ O que fica fora da solução está listado em [fora do escopo](02-Especificacao.
 
 ## Indicadores de desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Coloque no mínimo 5 indicadores.
-
-Use o seguinte modelo:
+Os indicadores usam apenas dados que o sistema já registra nos dois processos e no relatório de progresso. Todas as informações necessárias para gerá-los devem estar no diagrama de classes.
 
 | **Indicador** | **Objetivos** | **Descrição** | **Fonte de dados** | **Fórmula de cálculo** |
-| ---           | ---           | ---           | ---             | ---             |
-| Percentual de reclamações | Avaliar quantitativamente as reclamações | Percentual de reclamações em relação ao total de atendimentos | Tabela Reclamações | número total de reclamações / número total de atendimentos |
-| Taxa de requisições atendidas | Melhorar a prestação de serviços medindo a porcentagem de requisições atendidas| Mede a % de requisições atendidas na semana | Tabela Solicitações | (número de requisições atendidas / número total de requisições) * 100 |
-| Taxa de entrega de material | Manter controle sobre os materiais que estão sendo entregues | Mede % de material entregue dentro do mês | Tabela Pedidos | (número de pedidos entregues / número total de pedidos) * 100 |
-
-
-Obs.: todas as informações necessárias para gerar os indicadores devem estar no diagrama de classe a ser apresentado posteriormente.
+| --- | --- | --- | --- | --- |
+| Provas e trabalhos cadastrados com antecedência | Evitar que provas e trabalhos do colégio passem sem preparação (processo 1) | Percentual de provas e trabalhos cadastrados antes da data, no período | Provas e trabalhos; registro de alterações | (provas e trabalhos cadastrados antes da data / total de provas e trabalhos do período) * 100 |
+| Provas e trabalhos com nota lançada | Garantir que o resultado fique registrado (processo 1) | Percentual de provas e trabalhos já realizados que têm nota | Provas e trabalhos | (provas e trabalhos com data passada e com nota / provas e trabalhos com data passada) * 100 |
+| Matérias sinalizadas para reforço | Acompanhar quantos alunos precisam de reforço (processo 1) | Percentual de matérias acompanhadas com sinalização de reforço ativa, automática ou manual | Matérias do aluno; sinalizações de reforço | (matérias com sinalização ativa / total de matérias acompanhadas) * 100 |
+| Taxa de entrega de tarefas no prazo | Medir o cumprimento das tarefas, como no relatório de progresso | Percentual de tarefas entregues no prazo, no período | Tarefas | (tarefas com status Entregue no prazo / tarefas com prazo no período) * 100 |
+| Frequência do aluno | Medir a presença nas aulas, como no relatório de progresso | Percentual de aulas com presença, no período | Aulas e presenças | (aulas com presença / aulas registradas no período) * 100 |
+| Responsáveis que consultaram o sistema | Verificar se os responsáveis passaram a consultar sozinhos (processo 2) | Percentual de responsáveis com vínculo ativo que acessaram o sistema na semana | Responsáveis e vínculos; registro de acessos | (responsáveis que acessaram na semana / responsáveis com vínculo ativo) * 100 |
