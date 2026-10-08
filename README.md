@@ -10,16 +10,22 @@ Sistema web de acompanhamento pedagógico individualizado para a Divertindo a Me
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Gustavo Victor de Paula
+* Heitor Habaeb Moreira
+* Janio Junio de Freitas Cardoso
+* Lucas Henrique Pereira Silva
+* Sandro Renzzo Silva Rocha
+* Tiago Calazans Cruz
 
-## Professor
+## Professora
 
-* Nome completo do(a) professor(a)
+* Maria Ines Lage de Paula
+
+## Parceira externa
+
+* Ieronides Gonçalves da Silva Santos, proprietária da Divertindo a Mente (*Product Owner* do projeto)
+
+O acordo com a parceira externa está registrado na [ata de reunião de 01/10/2026](docs/atas/ata-acordo-com-cliente-externo.pdf), assinada por todos os participantes pelo gov.br.
 
 ## Instruções de utilização
 

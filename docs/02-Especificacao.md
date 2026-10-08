@@ -24,7 +24,7 @@ Nos documentos aparecem apenas o primeiro nome e a idade da pessoa entrevistada;
 
 ### Professoras
 
-#### P1: Ieronildes (Nide), 44 anos, proprietária e professora principal (usuária operadora)
+#### P1: Ieronides (Nide), 44 anos, proprietária e professora principal (usuária operadora)
 
 - Contexto: Dona da escolinha, onde trabalha há 2 anos. Atende os alunos de todas as séries até o 5º ano. Além de dar aula, cuida das matrículas e da conversa com as famílias.
 - Rotina: Dia movimentado, com demanda bastante corrida. Acompanha os alunos nas atividades e tarefas escolares, tira dúvidas, ajuda nas matérias em que eles têm dificuldade e prepara atividades de reforço de acordo com a necessidade de cada um. Cada aluno tem um caderno próprio na escolinha, onde ela aplica atividades com base no que ele está estudando no colégio.

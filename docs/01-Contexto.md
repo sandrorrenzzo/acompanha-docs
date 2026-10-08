@@ -6,7 +6,7 @@ Projeto da disciplina Trabalho Interdisciplinar: Aplicações para Processos de 
 
 ## Cliente
 
-A Divertindo a Mente é uma escolinha de reforço escolar no bairro Bela Vista, em Contagem/MG, que atende principalmente famílias do próprio bairro. A proprietária, Ieronildes (Nide), é também a professora principal e atende os alunos de todas as séries até o 5º ano; a professora auxiliar, Shirlei, atende os alunos do 6º ano.
+A Divertindo a Mente é uma escolinha de reforço escolar no bairro Bela Vista, em Contagem/MG, que atende principalmente famílias do próprio bairro. A proprietária, Ieronides (Nide), é também a professora principal e atende os alunos de todas as séries até o 5º ano; no projeto, ela atua como *Product Owner*, conforme a [ata de acordo com a parceira](atas/ata-acordo-com-cliente-externo.pdf); a professora auxiliar, Shirlei, atende os alunos do 6º ano.
 
 Nas aulas, o foco é ajudar nas atividades, nos trabalhos e nos estudos do colégio. Cada aluno tem um caderno próprio na escolinha, onde a professora aplica atividades com base no que ele está estudando no colégio.
 

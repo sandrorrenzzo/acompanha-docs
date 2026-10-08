@@ -1,5 +1,12 @@
 # Documentos de anuência de projetos
 
+## Situação no projeto Acompanha
+
+| Documento | Situação |
+| --- | --- |
+| Ata de anuência com parceiro externo | Assinada: [ata-acordo-com-cliente-externo.pdf](ata-acordo-com-cliente-externo.pdf). Reunião de 01/10/2026, com a professora Maria Ines Lage de Paula, a parceira Ieronides Gonçalves da Silva Santos (*Product Owner* da Divertindo a Mente) e os seis integrantes do grupo. Assinaturas pelo gov.br entre 01/10/2026 e 03/10/2026. |
+| Procuração do NIT ou termo de renúncia | A definir com a parceira: procuração, se ela quiser ser cotitular do software; termo de renúncia, se não quiser. |
+
 Esta pasta reúne documentos oficiais referentes à anuência de projetos de desenvolvimento de software vinculados à PUC Minas. Esses documentos são obrigatórios e utilizados, entre outras finalidades, para o registro de autoria intelectual junto ao INPI por meio da PROPPG, quando aplicável.
 
 ## ⚠️ Atenção
