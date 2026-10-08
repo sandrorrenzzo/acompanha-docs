@@ -1,156 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_P05ToBe" targetNamespace="http://bpmn.io/schema/bpmn">
-  <bpmn:collaboration id="Collaboration_P05ToBe">
-    <bpmn:participant id="Participant_P05ToBe" name="1. Provas e trabalhos do colégio (TO-BE)" processRef="Process_P05ToBe" />
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_P1ToBe" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="17.0.0">
+  <bpmn:collaboration id="Collaboration_P1ToBe">
+    <bpmn:participant id="Participant_P1ToBe" name="1. Provas e trabalhos do colégio (TO-BE)" processRef="Process_P1ToBe" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_P05ToBe" isExecutable="false">
-    <bpmn:laneSet id="LaneSet_P05ToBe">
-      <bpmn:lane id="P05ToBe_Lane_P" name="Professora">
-        <bpmn:flowNodeRef>P05ToBe_ini</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P05ToBe_cad</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P05ToBe_prep</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P05ToBe_data</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P05ToBe_obtem</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P05ToBe_lanca</bpmn:flowNodeRef>
+  <bpmn:process id="Process_P1ToBe" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_P1ToBe">
+      <bpmn:lane id="P1ToBe_Lane_A" name="Aluno">
+        <bpmn:flowNodeRef>P1ToBe_faz</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_nota</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="P05ToBe_Lane_S" name="Sistema Acompanha">
-        <bpmn:flowNodeRef>P05ToBe_mostra</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P05ToBe_salva</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P05ToBe_reforco</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P05ToBe_fim</bpmn:flowNodeRef>
+      <bpmn:lane id="P1ToBe_Lane_P" name="Professora">
+        <bpmn:flowNodeRef>P1ToBe_entra</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_pede</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_cad</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_estuda</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_dia</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_lanca</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_elogio</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_parabeniza</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_avisabom</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_segue</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_entende</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_conversa</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_planeja</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_fim</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="P1ToBe_Lane_S" name="Sistema Acompanha">
+        <bpmn:flowNodeRef>P1ToBe_mostra</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_recalc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_abaixo</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P1ToBe_sinaliza</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="P1ToBe_Lane_R" name="Responsável">
+        <bpmn:flowNodeRef>P1ToBe_manda</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:startEvent id="P05ToBe_ini" name="Fica sabendo de uma prova ou trabalho">
-      <bpmn:outgoing>Flow_P05ToBe_1</bpmn:outgoing>
+    <bpmn:startEvent id="P1ToBe_entra" name="Aluno entra na escolinha">
+      <bpmn:outgoing>Flow_P1ToBe_1</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:userTask id="P05ToBe_cad" name="Cadastra com matéria, origem e data, sem nota">
-      <bpmn:incoming>Flow_P05ToBe_1</bpmn:incoming>
-      <bpmn:outgoing>Flow_P05ToBe_2</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:serviceTask id="P05ToBe_mostra" name="Mostra no painel e na semana do responsável">
-      <bpmn:incoming>Flow_P05ToBe_2</bpmn:incoming>
-      <bpmn:outgoing>Flow_P05ToBe_3</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:manualTask id="P05ToBe_prep" name="Ajuda o aluno a se preparar">
-      <bpmn:incoming>Flow_P05ToBe_3</bpmn:incoming>
-      <bpmn:outgoing>Flow_P05ToBe_4</bpmn:outgoing>
+    <bpmn:manualTask id="P1ToBe_pede" name="Pede o cronograma de provas no WhatsApp">
+      <bpmn:incoming>Flow_P1ToBe_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_2</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:intermediateCatchEvent id="P05ToBe_data" name="Data da prova ou da entrega">
-      <bpmn:incoming>Flow_P05ToBe_4</bpmn:incoming>
-      <bpmn:outgoing>Flow_P05ToBe_5</bpmn:outgoing>
-      <bpmn:timerEventDefinition id="TimerDef_P05ToBe_data" />
+    <bpmn:manualTask id="P1ToBe_manda" name="Manda o cronograma">
+      <bpmn:incoming>Flow_P1ToBe_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_3</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="P1ToBe_cad" name="Cadastra as provas no sistema">
+      <bpmn:incoming>Flow_P1ToBe_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="P1ToBe_mostra" name="Mostra no painel e ao responsável">
+      <bpmn:incoming>Flow_P1ToBe_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_5</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:manualTask id="P1ToBe_estuda" name="Estuda com o aluno para a prova">
+      <bpmn:incoming>Flow_P1ToBe_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_6</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:intermediateCatchEvent id="P1ToBe_dia" name="Dia da prova">
+      <bpmn:incoming>Flow_P1ToBe_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_7</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerDef_P1ToBe_dia" />
     </bpmn:intermediateCatchEvent>
-    <bpmn:manualTask id="P05ToBe_obtem" name="Corrige ou recebe a nota do colégio">
-      <bpmn:incoming>Flow_P05ToBe_5</bpmn:incoming>
-      <bpmn:outgoing>Flow_P05ToBe_6</bpmn:outgoing>
+    <bpmn:manualTask id="P1ToBe_faz" name="Faz a prova">
+      <bpmn:incoming>Flow_P1ToBe_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_8</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:userTask id="P05ToBe_lanca" name="Lança a nota">
-      <bpmn:incoming>Flow_P05ToBe_6</bpmn:incoming>
-      <bpmn:outgoing>Flow_P05ToBe_7</bpmn:outgoing>
+    <bpmn:manualTask id="P1ToBe_nota" name="Recebe a nota e mostra à professora">
+      <bpmn:incoming>Flow_P1ToBe_8</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_9</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="P1ToBe_lanca" name="Lança a nota">
+      <bpmn:incoming>Flow_P1ToBe_9</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_10</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:serviceTask id="P05ToBe_salva" name="Salva a nota e recalcula a média da matéria">
-      <bpmn:incoming>Flow_P05ToBe_7</bpmn:incoming>
-      <bpmn:outgoing>Flow_P05ToBe_8</bpmn:outgoing>
+    <bpmn:serviceTask id="P1ToBe_recalc" name="Compara com o esperado pela escola">
+      <bpmn:incoming>Flow_P1ToBe_10</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_11</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="P05ToBe_reforco" name="Sinaliza reforço se a média ficar abaixo de 6,0">
-      <bpmn:incoming>Flow_P05ToBe_8</bpmn:incoming>
-      <bpmn:outgoing>Flow_P05ToBe_9</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:endEvent id="P05ToBe_fim" name="Nota registrada">
-      <bpmn:incoming>Flow_P05ToBe_9</bpmn:incoming>
+    <bpmn:exclusiveGateway id="P1ToBe_abaixo" name="Abaixo do esperado pela escola?">
+      <bpmn:incoming>Flow_P1ToBe_11</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_12</bpmn:outgoing>
+      <bpmn:outgoing>Flow_P1ToBe_16</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="P1ToBe_elogio" name="Registra o elogio no sistema">
+      <bpmn:incoming>Flow_P1ToBe_12</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_13</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:manualTask id="P1ToBe_parabeniza" name="Parabeniza o aluno">
+      <bpmn:incoming>Flow_P1ToBe_13</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_14</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="P1ToBe_avisabom" name="Avisa os pais">
+      <bpmn:incoming>Flow_P1ToBe_14</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_15</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="P1ToBe_segue" name="Pais avisados, com registro">
+      <bpmn:incoming>Flow_P1ToBe_15</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_P05ToBe_1" sourceRef="P05ToBe_ini" targetRef="P05ToBe_cad" />
-    <bpmn:sequenceFlow id="Flow_P05ToBe_2" sourceRef="P05ToBe_cad" targetRef="P05ToBe_mostra" />
-    <bpmn:sequenceFlow id="Flow_P05ToBe_3" sourceRef="P05ToBe_mostra" targetRef="P05ToBe_prep" />
-    <bpmn:sequenceFlow id="Flow_P05ToBe_4" sourceRef="P05ToBe_prep" targetRef="P05ToBe_data" />
-    <bpmn:sequenceFlow id="Flow_P05ToBe_5" sourceRef="P05ToBe_data" targetRef="P05ToBe_obtem" />
-    <bpmn:sequenceFlow id="Flow_P05ToBe_6" sourceRef="P05ToBe_obtem" targetRef="P05ToBe_lanca" />
-    <bpmn:sequenceFlow id="Flow_P05ToBe_7" sourceRef="P05ToBe_lanca" targetRef="P05ToBe_salva" />
-    <bpmn:sequenceFlow id="Flow_P05ToBe_8" sourceRef="P05ToBe_salva" targetRef="P05ToBe_reforco" />
-    <bpmn:sequenceFlow id="Flow_P05ToBe_9" sourceRef="P05ToBe_reforco" targetRef="P05ToBe_fim" />
+    <bpmn:serviceTask id="P1ToBe_sinaliza" name="Sinaliza reforço na matéria">
+      <bpmn:incoming>Flow_P1ToBe_16</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_17</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:manualTask id="P1ToBe_entende" name="Procura entender por que foi mal">
+      <bpmn:incoming>Flow_P1ToBe_17</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_18</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="P1ToBe_conversa" name="Conversa com os pais">
+      <bpmn:incoming>Flow_P1ToBe_18</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_19</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="P1ToBe_planeja" name="Passa atividades de reforço">
+      <bpmn:incoming>Flow_P1ToBe_19</bpmn:incoming>
+      <bpmn:outgoing>Flow_P1ToBe_20</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="P1ToBe_fim" name="Aluno em reforço, com registro">
+      <bpmn:incoming>Flow_P1ToBe_20</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_P1ToBe_1" sourceRef="P1ToBe_entra" targetRef="P1ToBe_pede" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_2" sourceRef="P1ToBe_pede" targetRef="P1ToBe_manda" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_3" sourceRef="P1ToBe_manda" targetRef="P1ToBe_cad" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_4" sourceRef="P1ToBe_cad" targetRef="P1ToBe_mostra" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_5" sourceRef="P1ToBe_mostra" targetRef="P1ToBe_estuda" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_6" sourceRef="P1ToBe_estuda" targetRef="P1ToBe_dia" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_7" sourceRef="P1ToBe_dia" targetRef="P1ToBe_faz" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_8" sourceRef="P1ToBe_faz" targetRef="P1ToBe_nota" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_9" sourceRef="P1ToBe_nota" targetRef="P1ToBe_lanca" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_10" sourceRef="P1ToBe_lanca" targetRef="P1ToBe_recalc" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_11" sourceRef="P1ToBe_recalc" targetRef="P1ToBe_abaixo" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_12" name="Não" sourceRef="P1ToBe_abaixo" targetRef="P1ToBe_elogio" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_13" sourceRef="P1ToBe_elogio" targetRef="P1ToBe_parabeniza" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_14" sourceRef="P1ToBe_parabeniza" targetRef="P1ToBe_avisabom" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_15" sourceRef="P1ToBe_avisabom" targetRef="P1ToBe_segue" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_16" name="Sim" sourceRef="P1ToBe_abaixo" targetRef="P1ToBe_sinaliza" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_17" sourceRef="P1ToBe_sinaliza" targetRef="P1ToBe_entende" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_18" sourceRef="P1ToBe_entende" targetRef="P1ToBe_conversa" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_19" sourceRef="P1ToBe_conversa" targetRef="P1ToBe_planeja" />
+    <bpmn:sequenceFlow id="Flow_P1ToBe_20" sourceRef="P1ToBe_planeja" targetRef="P1ToBe_fim" />
   </bpmn:process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_P05ToBe">
-    <bpmndi:BPMNPlane id="BPMNPlane_P05ToBe" bpmnElement="Collaboration_P05ToBe">
-      <bpmndi:BPMNShape id="Participant_P05ToBe_di" bpmnElement="Participant_P05ToBe" isHorizontal="true">
-        <dc:Bounds x="160" y="80" width="1810" height="280" />
+  <bpmndi:BPMNDiagram id="Diagram_P1ToBe">
+    <bpmndi:BPMNPlane id="Plane_P1ToBe" bpmnElement="Collaboration_P1ToBe">
+      <bpmndi:BPMNShape id="Participant_P1ToBe_di" bpmnElement="Participant_P1ToBe" isHorizontal="true">
+        <dc:Bounds x="120" y="80" width="2508" height="720" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_Lane_P_di" bpmnElement="P05ToBe_Lane_P" isHorizontal="true">
-        <dc:Bounds x="190" y="80" width="1780" height="140" />
+      <bpmndi:BPMNShape id="P1ToBe_Lane_A_di" bpmnElement="P1ToBe_Lane_A" isHorizontal="true">
+        <dc:Bounds x="150" y="80" width="2478" height="150" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_Lane_S_di" bpmnElement="P05ToBe_Lane_S" isHorizontal="true">
-        <dc:Bounds x="190" y="220" width="1780" height="140" />
+      <bpmndi:BPMNShape id="P1ToBe_Lane_P_di" bpmnElement="P1ToBe_Lane_P" isHorizontal="true">
+        <dc:Bounds x="150" y="230" width="2478" height="260" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_ini_di" bpmnElement="P05ToBe_ini">
-        <dc:Bounds x="287" y="132" width="36" height="36" />
+      <bpmndi:BPMNShape id="P1ToBe_Lane_S_di" bpmnElement="P1ToBe_Lane_S" isHorizontal="true">
+        <dc:Bounds x="150" y="490" width="2478" height="160" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_cad_di" bpmnElement="P05ToBe_cad">
-        <dc:Bounds x="415" y="105" width="120" height="90" />
+      <bpmndi:BPMNShape id="P1ToBe_Lane_R_di" bpmnElement="P1ToBe_Lane_R" isHorizontal="true">
+        <dc:Bounds x="150" y="650" width="2478" height="150" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_mostra_di" bpmnElement="P05ToBe_mostra">
-        <dc:Bounds x="585" y="245" width="120" height="90" />
+      <bpmndi:BPMNShape id="P1ToBe_entra_di" bpmnElement="P1ToBe_entra">
+        <dc:Bounds x="202" y="342" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="170" y="382" width="100" height="28" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_prep_di" bpmnElement="P05ToBe_prep">
-        <dc:Bounds x="755" y="105" width="120" height="90" />
+      <bpmndi:BPMNShape id="P1ToBe_pede_di" bpmnElement="P1ToBe_pede">
+        <dc:Bounds x="290" y="320" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_data_di" bpmnElement="P05ToBe_data">
-        <dc:Bounds x="967" y="132" width="36" height="36" />
+      <bpmndi:BPMNShape id="P1ToBe_manda_di" bpmnElement="P1ToBe_manda">
+        <dc:Bounds x="440" y="685" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_obtem_di" bpmnElement="P05ToBe_obtem">
-        <dc:Bounds x="1095" y="105" width="120" height="90" />
+      <bpmndi:BPMNShape id="P1ToBe_cad_di" bpmnElement="P1ToBe_cad">
+        <dc:Bounds x="590" y="320" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_lanca_di" bpmnElement="P05ToBe_lanca">
-        <dc:Bounds x="1265" y="105" width="120" height="90" />
+      <bpmndi:BPMNShape id="P1ToBe_mostra_di" bpmnElement="P1ToBe_mostra">
+        <dc:Bounds x="740" y="530" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_salva_di" bpmnElement="P05ToBe_salva">
-        <dc:Bounds x="1470" y="245" width="120" height="90" />
+      <bpmndi:BPMNShape id="P1ToBe_estuda_di" bpmnElement="P1ToBe_estuda">
+        <dc:Bounds x="890" y="320" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_reforco_di" bpmnElement="P05ToBe_reforco">
-        <dc:Bounds x="1640" y="245" width="120" height="90" />
+      <bpmndi:BPMNShape id="P1ToBe_dia_di" bpmnElement="P1ToBe_dia">
+        <dc:Bounds x="1062" y="342" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1030" y="382" width="100" height="14" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P05ToBe_fim_di" bpmnElement="P05ToBe_fim">
-        <dc:Bounds x="1852" y="272" width="36" height="36" />
+      <bpmndi:BPMNShape id="P1ToBe_faz_di" bpmnElement="P1ToBe_faz">
+        <dc:Bounds x="1140" y="115" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_1_di" bpmnElement="Flow_P05ToBe_1">
-        <di:waypoint x="323" y="150" />
-        <di:waypoint x="415" y="150" />
+      <bpmndi:BPMNShape id="P1ToBe_nota_di" bpmnElement="P1ToBe_nota">
+        <dc:Bounds x="1290" y="115" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_lanca_di" bpmnElement="P1ToBe_lanca">
+        <dc:Bounds x="1430" y="320" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_recalc_di" bpmnElement="P1ToBe_recalc">
+        <dc:Bounds x="1580" y="530" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_abaixo_di" bpmnElement="P1ToBe_abaixo" isMarkerVisible="true">
+        <dc:Bounds x="1755" y="545" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1730" y="599" width="100" height="42" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_elogio_di" bpmnElement="P1ToBe_elogio">
+        <dc:Bounds x="1860" y="260" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_parabeniza_di" bpmnElement="P1ToBe_parabeniza">
+        <dc:Bounds x="2010" y="260" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_avisabom_di" bpmnElement="P1ToBe_avisabom">
+        <dc:Bounds x="2160" y="260" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_segue_di" bpmnElement="P1ToBe_segue">
+        <dc:Bounds x="2342" y="282" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="2384" y="286" width="100" height="28" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_sinaliza_di" bpmnElement="P1ToBe_sinaliza">
+        <dc:Bounds x="1860" y="530" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_entende_di" bpmnElement="P1ToBe_entende">
+        <dc:Bounds x="2010" y="380" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_conversa_di" bpmnElement="P1ToBe_conversa">
+        <dc:Bounds x="2160" y="380" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_planeja_di" bpmnElement="P1ToBe_planeja">
+        <dc:Bounds x="2310" y="380" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P1ToBe_fim_di" bpmnElement="P1ToBe_fim">
+        <dc:Bounds x="2492" y="402" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="2460" y="442" width="100" height="42" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_1_di" bpmnElement="Flow_P1ToBe_1">
+        <di:waypoint x="238" y="360" />
+        <di:waypoint x="290" y="360" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_2_di" bpmnElement="Flow_P05ToBe_2">
-        <di:waypoint x="535" y="150" />
-        <di:waypoint x="560" y="150" />
-        <di:waypoint x="560" y="290" />
-        <di:waypoint x="585" y="290" />
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_2_di" bpmnElement="Flow_P1ToBe_2">
+        <di:waypoint x="410" y="360" />
+        <di:waypoint x="425" y="360" />
+        <di:waypoint x="425" y="725" />
+        <di:waypoint x="440" y="725" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_3_di" bpmnElement="Flow_P05ToBe_3">
-        <di:waypoint x="705" y="290" />
-        <di:waypoint x="730" y="290" />
-        <di:waypoint x="730" y="150" />
-        <di:waypoint x="755" y="150" />
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_3_di" bpmnElement="Flow_P1ToBe_3">
+        <di:waypoint x="560" y="725" />
+        <di:waypoint x="575" y="725" />
+        <di:waypoint x="575" y="360" />
+        <di:waypoint x="590" y="360" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_4_di" bpmnElement="Flow_P05ToBe_4">
-        <di:waypoint x="875" y="150" />
-        <di:waypoint x="967" y="150" />
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_4_di" bpmnElement="Flow_P1ToBe_4">
+        <di:waypoint x="710" y="360" />
+        <di:waypoint x="725" y="360" />
+        <di:waypoint x="725" y="570" />
+        <di:waypoint x="740" y="570" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_5_di" bpmnElement="Flow_P05ToBe_5">
-        <di:waypoint x="1003" y="150" />
-        <di:waypoint x="1095" y="150" />
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_5_di" bpmnElement="Flow_P1ToBe_5">
+        <di:waypoint x="860" y="570" />
+        <di:waypoint x="875" y="570" />
+        <di:waypoint x="875" y="360" />
+        <di:waypoint x="890" y="360" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_6_di" bpmnElement="Flow_P05ToBe_6">
-        <di:waypoint x="1215" y="150" />
-        <di:waypoint x="1265" y="150" />
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_6_di" bpmnElement="Flow_P1ToBe_6">
+        <di:waypoint x="1010" y="360" />
+        <di:waypoint x="1062" y="360" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_7_di" bpmnElement="Flow_P05ToBe_7">
-        <di:waypoint x="1385" y="150" />
-        <di:waypoint x="1427" y="150" />
-        <di:waypoint x="1427" y="290" />
-        <di:waypoint x="1470" y="290" />
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_7_di" bpmnElement="Flow_P1ToBe_7">
+        <di:waypoint x="1098" y="360" />
+        <di:waypoint x="1119" y="360" />
+        <di:waypoint x="1119" y="155" />
+        <di:waypoint x="1140" y="155" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_8_di" bpmnElement="Flow_P05ToBe_8">
-        <di:waypoint x="1590" y="290" />
-        <di:waypoint x="1640" y="290" />
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_8_di" bpmnElement="Flow_P1ToBe_8">
+        <di:waypoint x="1260" y="155" />
+        <di:waypoint x="1290" y="155" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P05ToBe_9_di" bpmnElement="Flow_P05ToBe_9">
-        <di:waypoint x="1760" y="290" />
-        <di:waypoint x="1852" y="290" />
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_9_di" bpmnElement="Flow_P1ToBe_9">
+        <di:waypoint x="1410" y="155" />
+        <di:waypoint x="1420" y="155" />
+        <di:waypoint x="1420" y="360" />
+        <di:waypoint x="1430" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_10_di" bpmnElement="Flow_P1ToBe_10">
+        <di:waypoint x="1550" y="360" />
+        <di:waypoint x="1565" y="360" />
+        <di:waypoint x="1565" y="570" />
+        <di:waypoint x="1580" y="570" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_11_di" bpmnElement="Flow_P1ToBe_11">
+        <di:waypoint x="1700" y="570" />
+        <di:waypoint x="1755" y="570" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_12_di" bpmnElement="Flow_P1ToBe_12">
+        <di:waypoint x="1780" y="545" />
+        <di:waypoint x="1780" y="300" />
+        <di:waypoint x="1860" y="300" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1786" y="527" width="22" height="14" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_13_di" bpmnElement="Flow_P1ToBe_13">
+        <di:waypoint x="1980" y="300" />
+        <di:waypoint x="2010" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_14_di" bpmnElement="Flow_P1ToBe_14">
+        <di:waypoint x="2130" y="300" />
+        <di:waypoint x="2160" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_15_di" bpmnElement="Flow_P1ToBe_15">
+        <di:waypoint x="2280" y="300" />
+        <di:waypoint x="2342" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_16_di" bpmnElement="Flow_P1ToBe_16">
+        <di:waypoint x="1805" y="570" />
+        <di:waypoint x="1860" y="570" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1811" y="552" width="22" height="14" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_17_di" bpmnElement="Flow_P1ToBe_17">
+        <di:waypoint x="1980" y="570" />
+        <di:waypoint x="1995" y="570" />
+        <di:waypoint x="1995" y="420" />
+        <di:waypoint x="2010" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_18_di" bpmnElement="Flow_P1ToBe_18">
+        <di:waypoint x="2130" y="420" />
+        <di:waypoint x="2160" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_19_di" bpmnElement="Flow_P1ToBe_19">
+        <di:waypoint x="2280" y="420" />
+        <di:waypoint x="2310" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_P1ToBe_20_di" bpmnElement="Flow_P1ToBe_20">
+        <di:waypoint x="2430" y="420" />
+        <di:waypoint x="2492" y="420" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

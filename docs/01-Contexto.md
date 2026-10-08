@@ -18,7 +18,7 @@ Hoje não existe acompanhamento pedagógico registrado. A planilha no Drive é u
 
 Isso traz dois problemas mais evidentes:
 
-- **Provas e trabalhos do colégio se perdem.** Se o aluno não avisa, a prova ou o trabalho passa sem preparação (já aconteceu com um trabalho de História de 10 pontos). A professora só sabe a nota se o aluno mostrar, e não a registra.
+- **Provas e trabalhos do colégio se perdem.** A professora pede aos pais o cronograma de provas do colégio e o prega na parede da escolinha, mas trabalhos passados durante o período e datas alteradas não estão nele. Se o aluno não avisa, a professora não fica sabendo da prova ou do trabalho e o aluno vai sem a ajuda do reforço (já aconteceu com um trabalho de História de 10 pontos). A professora só sabe a nota se o aluno mostrar, e não a registra.
 - **Os responsáveis dependem da memória da professora.** Eles pedem notícias com frequência, a maioria todos os dias, e cada pedido toma tempo da professora, que responde de memória porque não há registro.
 
 ## Objetivos
@@ -29,7 +29,7 @@ Os objetivos específicos são:
 
 - Registrar aulas, presença, tarefas, provas, trabalhos, notas e avaliações diagnósticas de cada aluno, numa tela simples que caiba na rotina corrida das professoras.
 - Mostrar à professora, ao abrir o sistema, um painel com o que está atrasado, o que vence nos próximos dias e quem precisa de reforço.
-- Sinalizar automaticamente a necessidade de reforço quando a média da matéria fica abaixo de 6,0, além de permitir a marcação manual.
+- Sinalizar automaticamente a necessidade de reforço quando uma prova fica abaixo do esperado pela escola do aluno (cada escola tem sua regra, por pontos ou por conceito), além de permitir a marcação manual.
 - Oferecer ao responsável, pelo celular, a visão da semana e o relatório de progresso do mês ou do bimestre, somente dos alunos vinculados a ele.
 - Tratar os dados das crianças conforme a LGPD, com consentimento registrado, acesso restrito por vínculo e eliminação dos dados no encerramento ou a pedido do responsável.
 

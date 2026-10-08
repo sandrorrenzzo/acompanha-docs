@@ -1,281 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_P07ToBe" targetNamespace="http://bpmn.io/schema/bpmn">
-  <bpmn:collaboration id="Collaboration_P07ToBe">
-    <bpmn:participant id="Participant_P07ToBe" name="2. Consulta do progresso pelo responsável (TO-BE)" processRef="Process_P07ToBe" />
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_P2ToBe" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="17.0.0">
+  <bpmn:collaboration id="Collaboration_P2ToBe">
+    <bpmn:participant id="Participant_P2ToBe" name="2. Consulta do progresso pelo responsável (TO-BE)" processRef="Process_P2ToBe" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_P07ToBe" isExecutable="false">
-    <bpmn:laneSet id="LaneSet_P07ToBe">
-      <bpmn:lane id="P07ToBe_Lane_R" name="Responsável">
-        <bpmn:flowNodeRef>P07ToBe_ini</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_login</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_escolhe</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_consulta</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_quer</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_rnao</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_le</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_fim</bpmn:flowNodeRef>
+  <bpmn:process id="Process_P2ToBe" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_P2ToBe">
+      <bpmn:lane id="P2ToBe_Lane_R" name="Responsável">
+        <bpmn:flowNodeRef>P2ToBe_ini</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_entra</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_quer</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_infsemana</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_le</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_atenc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_age</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_fim</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_emdia</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="P07ToBe_Lane_S" name="Sistema Acompanha">
-        <bpmn:flowNodeRef>P07ToBe_vinc</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_negado</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_varios</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_lista</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_merge</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_semana</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_monta</bpmn:flowNodeRef>
+      <bpmn:lane id="P2ToBe_Lane_S" name="Sistema Acompanha">
+        <bpmn:flowNodeRef>P2ToBe_semana</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_monta</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="P07ToBe_Lane_P" name="Professora">
-        <bpmn:flowNodeRef>P07ToBe_pini</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_obs</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>P07ToBe_pfim</bpmn:flowNodeRef>
+      <bpmn:lane id="P2ToBe_Lane_P" name="Professora">
+        <bpmn:flowNodeRef>P2ToBe_periodo</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_obs</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>P2ToBe_obsfim</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:startEvent id="P07ToBe_ini" name="Quer saber como o filho está">
-      <bpmn:outgoing>Flow_P07ToBe_1</bpmn:outgoing>
+    <bpmn:startEvent id="P2ToBe_ini" name="Quer saber como o filho está">
+      <bpmn:outgoing>Flow_P2ToBe_1</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:userTask id="P07ToBe_login" name="Faz login com e-mail e senha">
-      <bpmn:incoming>Flow_P07ToBe_1</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_2</bpmn:outgoing>
+    <bpmn:userTask id="P2ToBe_entra" name="Entra no sistema">
+      <bpmn:incoming>Flow_P2ToBe_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2ToBe_2</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:exclusiveGateway id="P07ToBe_vinc" name="Vínculo ativo com algum aluno?">
-      <bpmn:incoming>Flow_P07ToBe_2</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_3</bpmn:outgoing>
-      <bpmn:outgoing>Flow_P07ToBe_4</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="P07ToBe_negado" name="Acesso negado e registrado">
-      <bpmn:incoming>Flow_P07ToBe_3</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:exclusiveGateway id="P07ToBe_varios" name="Mais de um aluno vinculado?">
-      <bpmn:incoming>Flow_P07ToBe_4</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_5</bpmn:outgoing>
-      <bpmn:outgoing>Flow_P07ToBe_6</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
-    <bpmn:serviceTask id="P07ToBe_lista" name="Lista os alunos vinculados">
-      <bpmn:incoming>Flow_P07ToBe_5</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_7</bpmn:outgoing>
+    <bpmn:serviceTask id="P2ToBe_semana" name="Mostra a semana do filho">
+      <bpmn:incoming>Flow_P2ToBe_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2ToBe_3</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="P07ToBe_escolhe" name="Escolhe o aluno">
-      <bpmn:incoming>Flow_P07ToBe_7</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_8</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:exclusiveGateway id="P07ToBe_merge">
-      <bpmn:incoming>Flow_P07ToBe_6</bpmn:incoming>
-      <bpmn:incoming>Flow_P07ToBe_8</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_9</bpmn:outgoing>
+    <bpmn:exclusiveGateway id="P2ToBe_quer" name="Quer ver o período?">
+      <bpmn:incoming>Flow_P2ToBe_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2ToBe_4</bpmn:outgoing>
+      <bpmn:outgoing>Flow_P2ToBe_5</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:serviceTask id="P07ToBe_semana" name="Mostra a semana: última aula, tarefas e provas">
-      <bpmn:incoming>Flow_P07ToBe_9</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_10</bpmn:outgoing>
+    <bpmn:endEvent id="P2ToBe_infsemana" name="Informado sobre a semana">
+      <bpmn:incoming>Flow_P2ToBe_4</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="P2ToBe_monta" name="Monta o relatório do período">
+      <bpmn:incoming>Flow_P2ToBe_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2ToBe_6</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="P07ToBe_consulta" name="Consulta a semana do filho">
-      <bpmn:incoming>Flow_P07ToBe_10</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_11</bpmn:outgoing>
+    <bpmn:userTask id="P2ToBe_le" name="Lê o relatório">
+      <bpmn:incoming>Flow_P2ToBe_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2ToBe_7</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:exclusiveGateway id="P07ToBe_quer" name="Quer ver o relatório do período?">
-      <bpmn:incoming>Flow_P07ToBe_11</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_12</bpmn:outgoing>
-      <bpmn:outgoing>Flow_P07ToBe_13</bpmn:outgoing>
+    <bpmn:exclusiveGateway id="P2ToBe_atenc" name="Alguma matéria precisa de atenção?">
+      <bpmn:incoming>Flow_P2ToBe_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2ToBe_8</bpmn:outgoing>
+      <bpmn:outgoing>Flow_P2ToBe_9</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="P07ToBe_rnao" name="Informado sobre a semana">
-      <bpmn:incoming>Flow_P07ToBe_13</bpmn:incoming>
+    <bpmn:manualTask id="P2ToBe_age" name="Ajuda em casa ou conversa com a professora">
+      <bpmn:incoming>Flow_P2ToBe_8</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2ToBe_10</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="P2ToBe_fim" name="Família age sobre a dificuldade">
+      <bpmn:incoming>Flow_P2ToBe_10</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="P07ToBe_monta" name="Monta o relatório do mês ou bimestre">
-      <bpmn:incoming>Flow_P07ToBe_12</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_14</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:userTask id="P07ToBe_le" name="Lê o relatório de progresso">
-      <bpmn:incoming>Flow_P07ToBe_14</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_15</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:endEvent id="P07ToBe_fim" name="Informado">
-      <bpmn:incoming>Flow_P07ToBe_15</bpmn:incoming>
+    <bpmn:endEvent id="P2ToBe_emdia" name="Informado, filho em dia">
+      <bpmn:incoming>Flow_P2ToBe_9</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:startEvent id="P07ToBe_pini" name="Fim do mês ou do bimestre">
-      <bpmn:outgoing>Flow_P07ToBe_16</bpmn:outgoing>
-      <bpmn:timerEventDefinition id="TimerDef_P07ToBe_pini" />
+    <bpmn:startEvent id="P2ToBe_periodo" name="Fim do mês ou do bimestre">
+      <bpmn:outgoing>Flow_P2ToBe_11</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerDef_P2ToBe_periodo" />
     </bpmn:startEvent>
-    <bpmn:userTask id="P07ToBe_obs" name="Escreve a observação pedagógica do período">
-      <bpmn:incoming>Flow_P07ToBe_16</bpmn:incoming>
-      <bpmn:outgoing>Flow_P07ToBe_17</bpmn:outgoing>
+    <bpmn:userTask id="P2ToBe_obs" name="Escreve a observação do período">
+      <bpmn:incoming>Flow_P2ToBe_11</bpmn:incoming>
+      <bpmn:outgoing>Flow_P2ToBe_12</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:endEvent id="P07ToBe_pfim" name="Observação disponível no relatório">
-      <bpmn:incoming>Flow_P07ToBe_17</bpmn:incoming>
+    <bpmn:endEvent id="P2ToBe_obsfim" name="Observação aparece no relatório">
+      <bpmn:incoming>Flow_P2ToBe_12</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_P07ToBe_1" sourceRef="P07ToBe_ini" targetRef="P07ToBe_login" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_2" sourceRef="P07ToBe_login" targetRef="P07ToBe_vinc" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_3" name="Não" sourceRef="P07ToBe_vinc" targetRef="P07ToBe_negado" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_4" name="Sim" sourceRef="P07ToBe_vinc" targetRef="P07ToBe_varios" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_5" name="Sim" sourceRef="P07ToBe_varios" targetRef="P07ToBe_lista" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_6" name="Não" sourceRef="P07ToBe_varios" targetRef="P07ToBe_merge" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_7" sourceRef="P07ToBe_lista" targetRef="P07ToBe_escolhe" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_8" sourceRef="P07ToBe_escolhe" targetRef="P07ToBe_merge" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_9" sourceRef="P07ToBe_merge" targetRef="P07ToBe_semana" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_10" sourceRef="P07ToBe_semana" targetRef="P07ToBe_consulta" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_11" sourceRef="P07ToBe_consulta" targetRef="P07ToBe_quer" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_12" name="Sim" sourceRef="P07ToBe_quer" targetRef="P07ToBe_monta" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_13" name="Não" sourceRef="P07ToBe_quer" targetRef="P07ToBe_rnao" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_14" sourceRef="P07ToBe_monta" targetRef="P07ToBe_le" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_15" sourceRef="P07ToBe_le" targetRef="P07ToBe_fim" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_16" sourceRef="P07ToBe_pini" targetRef="P07ToBe_obs" />
-    <bpmn:sequenceFlow id="Flow_P07ToBe_17" sourceRef="P07ToBe_obs" targetRef="P07ToBe_pfim" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_1" sourceRef="P2ToBe_ini" targetRef="P2ToBe_entra" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_2" sourceRef="P2ToBe_entra" targetRef="P2ToBe_semana" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_3" sourceRef="P2ToBe_semana" targetRef="P2ToBe_quer" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_4" name="Não" sourceRef="P2ToBe_quer" targetRef="P2ToBe_infsemana" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_5" name="Sim" sourceRef="P2ToBe_quer" targetRef="P2ToBe_monta" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_6" sourceRef="P2ToBe_monta" targetRef="P2ToBe_le" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_7" sourceRef="P2ToBe_le" targetRef="P2ToBe_atenc" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_8" name="Sim" sourceRef="P2ToBe_atenc" targetRef="P2ToBe_age" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_9" name="Não" sourceRef="P2ToBe_atenc" targetRef="P2ToBe_emdia" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_10" sourceRef="P2ToBe_age" targetRef="P2ToBe_fim" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_11" sourceRef="P2ToBe_periodo" targetRef="P2ToBe_obs" />
+    <bpmn:sequenceFlow id="Flow_P2ToBe_12" sourceRef="P2ToBe_obs" targetRef="P2ToBe_obsfim" />
   </bpmn:process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_P07ToBe">
-    <bpmndi:BPMNPlane id="BPMNPlane_P07ToBe" bpmnElement="Collaboration_P07ToBe">
-      <bpmndi:BPMNShape id="Participant_P07ToBe_di" bpmnElement="Participant_P07ToBe" isHorizontal="true">
-        <dc:Bounds x="160" y="80" width="2280" height="700" />
+  <bpmndi:BPMNDiagram id="Diagram_P2ToBe">
+    <bpmndi:BPMNPlane id="Plane_P2ToBe" bpmnElement="Collaboration_P2ToBe">
+      <bpmndi:BPMNShape id="Participant_P2ToBe_di" bpmnElement="Participant_P2ToBe" isHorizontal="true">
+        <dc:Bounds x="120" y="80" width="1388" height="560" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_Lane_R_di" bpmnElement="P07ToBe_Lane_R" isHorizontal="true">
-        <dc:Bounds x="190" y="80" width="2250" height="280" />
+      <bpmndi:BPMNShape id="P2ToBe_Lane_R_di" bpmnElement="P2ToBe_Lane_R" isHorizontal="true">
+        <dc:Bounds x="150" y="80" width="1358" height="240" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_Lane_S_di" bpmnElement="P07ToBe_Lane_S" isHorizontal="true">
-        <dc:Bounds x="190" y="360" width="2250" height="280" />
+      <bpmndi:BPMNShape id="P2ToBe_Lane_S_di" bpmnElement="P2ToBe_Lane_S" isHorizontal="true">
+        <dc:Bounds x="150" y="320" width="1358" height="160" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_Lane_P_di" bpmnElement="P07ToBe_Lane_P" isHorizontal="true">
-        <dc:Bounds x="190" y="640" width="2250" height="140" />
+      <bpmndi:BPMNShape id="P2ToBe_Lane_P_di" bpmnElement="P2ToBe_Lane_P" isHorizontal="true">
+        <dc:Bounds x="150" y="480" width="1358" height="160" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_ini_di" bpmnElement="P07ToBe_ini">
-        <dc:Bounds x="287" y="132" width="36" height="36" />
+      <bpmndi:BPMNShape id="P2ToBe_ini_di" bpmnElement="P2ToBe_ini">
+        <dc:Bounds x="202" y="182" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="170" y="222" width="100" height="28" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_login_di" bpmnElement="P07ToBe_login">
-        <dc:Bounds x="415" y="105" width="120" height="90" />
+      <bpmndi:BPMNShape id="P2ToBe_entra_di" bpmnElement="P2ToBe_entra">
+        <dc:Bounds x="290" y="160" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_vinc_di" bpmnElement="P07ToBe_vinc" isMarkerVisible="true">
-        <dc:Bounds x="620" y="405" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="585" y="361" width="120" height="40" />
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="P2ToBe_semana_di" bpmnElement="P2ToBe_semana">
+        <dc:Bounds x="440" y="360" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_negado_di" bpmnElement="P07ToBe_negado">
-        <dc:Bounds x="627" y="552" width="36" height="36" />
+      <bpmndi:BPMNShape id="P2ToBe_quer_di" bpmnElement="P2ToBe_quer" isMarkerVisible="true">
+        <dc:Bounds x="615" y="175" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="509" y="186" width="100" height="28" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_varios_di" bpmnElement="P07ToBe_varios" isMarkerVisible="true">
-        <dc:Bounds x="790" y="405" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="755" y="361" width="120" height="40" />
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="P2ToBe_infsemana_di" bpmnElement="P2ToBe_infsemana">
+        <dc:Bounds x="742" y="122" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="784" y="126" width="100" height="28" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_lista_di" bpmnElement="P07ToBe_lista">
-        <dc:Bounds x="925" y="385" width="120" height="90" />
+      <bpmndi:BPMNShape id="P2ToBe_monta_di" bpmnElement="P2ToBe_monta">
+        <dc:Bounds x="760" y="360" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_escolhe_di" bpmnElement="P07ToBe_escolhe">
-        <dc:Bounds x="1095" y="105" width="120" height="90" />
+      <bpmndi:BPMNShape id="P2ToBe_le_di" bpmnElement="P2ToBe_le">
+        <dc:Bounds x="910" y="160" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_merge_di" bpmnElement="P07ToBe_merge" isMarkerVisible="true">
-        <dc:Bounds x="1300" y="545" width="50" height="50" />
+      <bpmndi:BPMNShape id="P2ToBe_atenc_di" bpmnElement="P2ToBe_atenc" isMarkerVisible="true">
+        <dc:Bounds x="1085" y="175" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1060" y="131" width="100" height="42" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_semana_di" bpmnElement="P07ToBe_semana">
-        <dc:Bounds x="1435" y="385" width="120" height="90" />
+      <bpmndi:BPMNShape id="P2ToBe_age_di" bpmnElement="P2ToBe_age">
+        <dc:Bounds x="1190" y="160" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_consulta_di" bpmnElement="P07ToBe_consulta">
-        <dc:Bounds x="1605" y="105" width="120" height="90" />
+      <bpmndi:BPMNShape id="P2ToBe_fim_di" bpmnElement="P2ToBe_fim">
+        <dc:Bounds x="1372" y="182" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1340" y="222" width="100" height="42" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_quer_di" bpmnElement="P07ToBe_quer" isMarkerVisible="true">
-        <dc:Bounds x="1810" y="125" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1775" y="81" width="120" height="40" />
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="P2ToBe_emdia_di" bpmnElement="P2ToBe_emdia">
+        <dc:Bounds x="1232" y="252" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1274" y="256" width="100" height="28" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_rnao_di" bpmnElement="P07ToBe_rnao">
-        <dc:Bounds x="1817" y="272" width="36" height="36" />
+      <bpmndi:BPMNShape id="P2ToBe_periodo_di" bpmnElement="P2ToBe_periodo">
+        <dc:Bounds x="202" y="542" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="170" y="582" width="100" height="28" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_monta_di" bpmnElement="P07ToBe_monta">
-        <dc:Bounds x="1945" y="385" width="120" height="90" />
+      <bpmndi:BPMNShape id="P2ToBe_obs_di" bpmnElement="P2ToBe_obs">
+        <dc:Bounds x="290" y="520" width="120" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_le_di" bpmnElement="P07ToBe_le">
-        <dc:Bounds x="2115" y="105" width="120" height="90" />
+      <bpmndi:BPMNShape id="P2ToBe_obsfim_di" bpmnElement="P2ToBe_obsfim">
+        <dc:Bounds x="482" y="542" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="450" y="582" width="100" height="42" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_fim_di" bpmnElement="P07ToBe_fim">
-        <dc:Bounds x="2327" y="132" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_pini_di" bpmnElement="P07ToBe_pini">
-        <dc:Bounds x="1817" y="692" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_obs_di" bpmnElement="P07ToBe_obs">
-        <dc:Bounds x="1945" y="665" width="120" height="90" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="P07ToBe_pfim_di" bpmnElement="P07ToBe_pfim">
-        <dc:Bounds x="2157" y="692" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_1_di" bpmnElement="Flow_P07ToBe_1">
-        <di:waypoint x="323" y="150" />
-        <di:waypoint x="415" y="150" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_1_di" bpmnElement="Flow_P2ToBe_1">
+        <di:waypoint x="238" y="200" />
+        <di:waypoint x="290" y="200" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_2_di" bpmnElement="Flow_P07ToBe_2">
-        <di:waypoint x="535" y="150" />
-        <di:waypoint x="577.5" y="150" />
-        <di:waypoint x="577.5" y="430" />
-        <di:waypoint x="620" y="430" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_2_di" bpmnElement="Flow_P2ToBe_2">
+        <di:waypoint x="410" y="200" />
+        <di:waypoint x="425" y="200" />
+        <di:waypoint x="425" y="400" />
+        <di:waypoint x="440" y="400" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_3_di" bpmnElement="Flow_P07ToBe_3">
-        <di:waypoint x="645" y="455" />
-        <di:waypoint x="645" y="552" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_3_di" bpmnElement="Flow_P2ToBe_3">
+        <di:waypoint x="560" y="400" />
+        <di:waypoint x="640" y="400" />
+        <di:waypoint x="640" y="225" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_4_di" bpmnElement="Flow_P07ToBe_4">
-        <di:waypoint x="670" y="430" />
-        <di:waypoint x="790" y="430" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_4_di" bpmnElement="Flow_P2ToBe_4">
+        <di:waypoint x="640" y="175" />
+        <di:waypoint x="640" y="140" />
+        <di:waypoint x="742" y="140" />
+        <bpmndi:BPMNLabel><dc:Bounds x="646" y="157" width="22" height="14" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_5_di" bpmnElement="Flow_P07ToBe_5">
-        <di:waypoint x="840" y="430" />
-        <di:waypoint x="925" y="430" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_5_di" bpmnElement="Flow_P2ToBe_5">
+        <di:waypoint x="665" y="200" />
+        <di:waypoint x="700" y="200" />
+        <di:waypoint x="700" y="400" />
+        <di:waypoint x="760" y="400" />
+        <bpmndi:BPMNLabel><dc:Bounds x="671" y="182" width="22" height="14" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_6_di" bpmnElement="Flow_P07ToBe_6">
-        <di:waypoint x="815" y="455" />
-        <di:waypoint x="815" y="570" />
-        <di:waypoint x="1300" y="570" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_6_di" bpmnElement="Flow_P2ToBe_6">
+        <di:waypoint x="880" y="400" />
+        <di:waypoint x="895" y="400" />
+        <di:waypoint x="895" y="200" />
+        <di:waypoint x="910" y="200" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_7_di" bpmnElement="Flow_P07ToBe_7">
-        <di:waypoint x="1045" y="430" />
-        <di:waypoint x="1070" y="430" />
-        <di:waypoint x="1070" y="150" />
-        <di:waypoint x="1095" y="150" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_7_di" bpmnElement="Flow_P2ToBe_7">
+        <di:waypoint x="1030" y="200" />
+        <di:waypoint x="1085" y="200" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_8_di" bpmnElement="Flow_P07ToBe_8">
-        <di:waypoint x="1215" y="150" />
-        <di:waypoint x="1325" y="150" />
-        <di:waypoint x="1325" y="545" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_8_di" bpmnElement="Flow_P2ToBe_8">
+        <di:waypoint x="1135" y="200" />
+        <di:waypoint x="1190" y="200" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1141" y="182" width="22" height="14" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_9_di" bpmnElement="Flow_P07ToBe_9">
-        <di:waypoint x="1350" y="570" />
-        <di:waypoint x="1392.5" y="570" />
-        <di:waypoint x="1392.5" y="430" />
-        <di:waypoint x="1435" y="430" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_9_di" bpmnElement="Flow_P2ToBe_9">
+        <di:waypoint x="1110" y="225" />
+        <di:waypoint x="1110" y="270" />
+        <di:waypoint x="1232" y="270" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1116" y="227" width="22" height="14" /></bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_10_di" bpmnElement="Flow_P07ToBe_10">
-        <di:waypoint x="1555" y="430" />
-        <di:waypoint x="1580" y="430" />
-        <di:waypoint x="1580" y="150" />
-        <di:waypoint x="1605" y="150" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_10_di" bpmnElement="Flow_P2ToBe_10">
+        <di:waypoint x="1310" y="200" />
+        <di:waypoint x="1372" y="200" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_11_di" bpmnElement="Flow_P07ToBe_11">
-        <di:waypoint x="1725" y="150" />
-        <di:waypoint x="1810" y="150" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_11_di" bpmnElement="Flow_P2ToBe_11">
+        <di:waypoint x="238" y="560" />
+        <di:waypoint x="290" y="560" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_12_di" bpmnElement="Flow_P07ToBe_12">
-        <di:waypoint x="1860" y="150" />
-        <di:waypoint x="2005" y="150" />
-        <di:waypoint x="2005" y="385" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_13_di" bpmnElement="Flow_P07ToBe_13">
-        <di:waypoint x="1835" y="175" />
-        <di:waypoint x="1835" y="272" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_14_di" bpmnElement="Flow_P07ToBe_14">
-        <di:waypoint x="2065" y="430" />
-        <di:waypoint x="2090" y="430" />
-        <di:waypoint x="2090" y="150" />
-        <di:waypoint x="2115" y="150" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_15_di" bpmnElement="Flow_P07ToBe_15">
-        <di:waypoint x="2235" y="150" />
-        <di:waypoint x="2327" y="150" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_16_di" bpmnElement="Flow_P07ToBe_16">
-        <di:waypoint x="1853" y="710" />
-        <di:waypoint x="1945" y="710" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_P07ToBe_17_di" bpmnElement="Flow_P07ToBe_17">
-        <di:waypoint x="2065" y="710" />
-        <di:waypoint x="2157" y="710" />
+      <bpmndi:BPMNEdge id="Flow_P2ToBe_12_di" bpmnElement="Flow_P2ToBe_12">
+        <di:waypoint x="410" y="560" />
+        <di:waypoint x="482" y="560" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
