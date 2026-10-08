@@ -4,7 +4,7 @@
 
 `DISCIPLINA: Trabalho Interdisciplinar Aplicações para Processos de Negócios`
 
-`Xº semestre/2026`
+`2º semestre/2026`
 
 Sistema web de acompanhamento pedagógico individualizado para a Divertindo a Mente, escolinha de reforço escolar no bairro Bela Vista, em Contagem/MG, que atende principalmente famílias do próprio bairro. Passa a registrar aulas, tarefas e notas, que hoje não ficam anotadas em lugar nenhum, e dá aos responsáveis uma visão simples do progresso dos próprios filhos.
 
@@ -20,12 +20,6 @@ Sistema web de acompanhamento pedagógico individualizado para a Divertindo a Me
 ## Professora
 
 * Maria Ines Lage de Paula
-
-## Parceira externa
-
-* Ieronides Gonçalves da Silva Santos, proprietária da Divertindo a Mente 
-
-O acordo com a parceira externa está registrado na [ata de reunião de 01/10/2026](docs/atas/ata-acordo-com-cliente-externo.pdf), assinada por todos os participantes pelo gov.br.
 
 ## Instruções de utilização
 
