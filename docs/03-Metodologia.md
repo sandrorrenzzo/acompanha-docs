@@ -52,6 +52,15 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 - Histórias de usuário e requisitos funcionais: Lucas Henrique Pereira Silva
 - Regras de negócio, requisitos não funcionais e dados pessoais: Tiago Calazans Cruz
 
+#### Sprint 3
+- _Scrum master_, revisão dos itens anteriores e revisão final: Sandro Renzzo Silva Rocha
+- Apresentação: todo o grupo
+- Modelo de dados: Heitor Habaeb Moreira
+- Fluxos e jornada do usuário: Gustavo Victor de Paula
+- Template padrão: Janio Junio de Freitas Cardoso
+- Arquitetura e diagrama de classes: Lucas Henrique Pereira Silva
+- Wireframes, qualidade de software, hospedagem e referências: Tiago Calazans Cruz
+
 ### Quadro de tarefas
 
 #### Sprint 1
@@ -87,6 +96,27 @@ Atualizado em: 23/10/2026
 | Lucas | Histórias de usuário e requisitos funcionais | ✔️ |
 | Tiago | Regras de negócio e requisitos não funcionais | ✔️ |
 | Tiago | Restrições de escopo e tratamento de dados pessoais | ✔️ |
+
+#### Sprint 3
+
+Atualizado em: 23/10/2026
+
+| Responsável | Tarefa/Requisito | Status |
+| :---- | :---- | :----: |
+| Sandro | Revisão dos itens das sprints anteriores (metodologia, especificação e processos) | ✔️ |
+| Sandro | Coordenação da revisão final | ✔️ |
+| Todos | Apresentação da Sprint 3, com a URL do repositório | 📝 |
+| Heitor | Diagrama entidade-relacionamento (modelo conceitual) | ✔️ |
+| Heitor | Modelo relacional | ✔️ |
+| Gustavo | User flow e diagrama de fluxo | ✔️ |
+| Gustavo | Jornada do usuário | ✔️ |
+| Janio | Template padrão da aplicação (marca, cores, tipografia e componentes) | ✔️ |
+| Lucas | Diagrama de arquitetura, funções do sistema e tecnologias | ✔️ |
+| Lucas | Diagrama de classes | ✔️ |
+| Tiago | Wireframes das telas principais | ✔️ |
+| Tiago | Qualidade de software (ISO/IEC 25010) | ✔️ |
+| Tiago | Hospedagem | ✔️ |
+| Tiago | Referências | ✔️ |
 
 Legenda:
 - ✔️: terminado
