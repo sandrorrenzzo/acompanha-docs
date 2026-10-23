@@ -27,7 +27,16 @@ O Acompanha é uma aplicação web em três camadas: front-end em React, back-en
 
 O diagrama de classes ilustra graficamente a estrutura do software e como cada uma das classes estará interligada. Essas classes servem de modelo para materializar os objetos que serão executados na memória.
 
-Elabore o diagrama de classes utilizando uma ferramenta de modelagem apropriada.
+O diagrama segue a notação UML e foi feito no [draw.io](https://app.diagrams.net). O arquivo [classes-acompanha.drawio.svg](images/classes-acompanha.drawio.svg) pode ser aberto e editado direto na ferramenta.
+
+![Diagrama de classes do Acompanha](images/classes-acompanha.drawio.svg "Diagrama de classes do Acompanha")
+
+- **Aluno** é a classe central. Os registros do aluno (aulas, tarefas, provas e trabalhos, reforços, avaliações diagnósticas e observações do período) são partes dele (composição): quando os dados do aluno são eliminados (RN09 e RN10), os registros vão junto.
+- **Usuario** representa a professora e o responsável; a enumeração `Papel` define o que cada um pode acessar. Um responsável responde por vários alunos (RN13).
+- **Escola** guarda a forma de avaliação e a nota mínima, e o método `avaliar` compara a nota da prova com o esperado pela escola (RN01 e RN02).
+- **Reforco** tem início e fim: fica ativo enquanto `dataFim` estiver vazia e é encerrado quando a próxima prova fica dentro do esperado ou quando a professora desmarca (RN04 e RN05).
+- **Tarefa** sabe se está atrasada (`estaAtrasada`, RN03), e **ProvaTrabalho** pode ser marcada como sem nota depois do prazo (RN14).
+- As classes têm os mesmos atributos do [modelo relacional](#modelo-relacional). A matéria de cada registro e a professora da aula aparecem como atributos para não sobrecarregar o diagrama com linhas.
 
 > **Links úteis**:
 > - [Diagramas de classes - documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.7.0?topic=diagrams-class)
