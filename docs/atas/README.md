@@ -4,8 +4,9 @@
 
 | Documento | Situação |
 | --- | --- |
-| Ata de anuência com parceiro externo | Assinada: [ata-acordo-com-cliente-externo.pdf](ata-acordo-com-cliente-externo.pdf). Reunião de 01/10/2026, com a professora Maria Ines Lage de Paula, a parceira Ieronides Gonçalves da Silva Santos (*Product Owner* da Divertindo a Mente) e os seis integrantes do grupo. Assinaturas pelo gov.br entre 01/10/2026 e 03/10/2026. |
-| Procuração do NIT ou termo de renúncia | A definir com a parceira: procuração, se ela quiser ser cotitular do software; termo de renúncia, se não quiser. |
+| Ata de anuência com parceiro externo | Assinada: [ata-acordo-com-cliente-externo.pdf](ata-acordo-com-cliente-externo.pdf). Reunião de 01/10/2026, com a professora Maria Ines Lage de Paula, a parceira Ieronides Gonçalves da Silva Santos (*Product Owner* da Divertindo a Mente) e os seis integrantes do grupo. Assinada pelo gov.br pelos seis integrantes e pela parceira entre 01/10/2026 e 03/10/2026. |
+| Termo de renúncia a direitos de cotitularidade | Assinado: [termo-renuncia-direitos-cotitularidade.pdf](termo-renuncia-direitos-cotitularidade.pdf). A parceira optou por não ser cotitular do software. Termo assinado pelo gov.br em 08/10/2026 por Ieronides Gonçalves da Silva Santos, proprietária da Divertindo a Mente, com o CNPJ da empresa. |
+| Procuração do NIT | Não se aplica: como a parceira assinou o termo de renúncia, a procuração não é necessária. |
 
 Esta pasta reúne documentos oficiais referentes à anuência de projetos de desenvolvimento de software vinculados à PUC Minas. Esses documentos são obrigatórios e utilizados, entre outras finalidades, para o registro de autoria intelectual junto ao INPI por meio da PROPPG, quando aplicável.
 

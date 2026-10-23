@@ -5,7 +5,9 @@
 
 ## Slides
 
-Coloque aqui o conjunto de slides.
+| Entrega | Arquivo | Conteúdo |
+| --- | --- | --- |
+| Sprint 2 | [apresentacao-slides-projeto-acompanha-grupo-3-sprint-2.pdf](apresentacao-slides-projeto-acompanha-grupo-3-sprint-2.pdf) | Problema, objetivos e partes interessadas, personas, regras de negócio e LGPD, requisitos principais e os processos de provas e trabalhos e de consulta do progresso (AS-IS e TO-BE). |
 
 > O arquivo deve estar no formato PDF e conter a apresentação completa do projeto, abordando todos os itens trabalhados nos demais artefatos. 
 
