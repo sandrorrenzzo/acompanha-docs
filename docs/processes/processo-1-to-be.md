@@ -2,7 +2,7 @@
 
 O processo segue o mesmo caminho de hoje, mas o que hoje fica na parede e na memória passa a ficar no sistema. O cronograma é cadastrado em vez de pregado na parede, e assim aparece no painel da professora e na visão da semana do responsável. A nota é lançada em vez de só vista, e o sistema compara a nota com o que a escola do aluno considera suficiente, em vez da percepção de cada momento. Como os alunos vêm de escolas diferentes (provas de valores diferentes, trimestre ou bimestre, pontos ou conceito), a comparação usa a regra de cada escola, e não um número fixo. Nos dois casos a professora fala com os pais como já faz hoje, mas agora fica registrado: o elogio, quando o aluno vai bem, e as atividades de reforço, quando vai mal.
 
-O modelo está em [01-provas-e-trabalhos-to-be.bpmn](../bpmn/01-provas-e-trabalhos-to-be.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
+O modelo está em [01-provas-e-trabalhos-to-be.bpmn](01-provas-e-trabalhos-to-be.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
 
 Participam do processo a professora, o aluno, o responsável e o Sistema Acompanha.
 

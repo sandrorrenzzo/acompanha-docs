@@ -4,7 +4,7 @@
 
 Modelagem AS-IS (como é feito hoje) e TO-BE (como será com o Acompanha) dos dois processos com os problemas mais evidentes da escolinha.
 
-Os diagramas estão na pasta [bpmn](bpmn/), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo `.bpmn` para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
+Os diagramas estão na pasta [processes](processes/), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo `.bpmn` para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
 
 ### Convenções
 

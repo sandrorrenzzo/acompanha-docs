@@ -2,7 +2,7 @@
 
 Quando o aluno entra na escolinha, a Nide pede aos pais, no WhatsApp, o cronograma de provas que o colégio entrega no início do período letivo. Ela imprime o cronograma e prega na parede da escolinha, para revisitar sempre, lembrar os alunos das provas e estudar com eles de forma direcionada. Depois da prova, se o aluno mostra a nota e ela é boa, a Nide parabeniza; se não é, procura entender o que aconteceu e conversa com os pais. Nada disso fica registrado.
 
-O modelo está em [01-provas-e-trabalhos-as-is.bpmn](../bpmn/01-provas-e-trabalhos-as-is.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
+O modelo está em [01-provas-e-trabalhos-as-is.bpmn](01-provas-e-trabalhos-as-is.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
 
 Participam do processo a professora, o aluno e o responsável. Nenhuma atividade usa sistema: todas são tarefas manuais.
 

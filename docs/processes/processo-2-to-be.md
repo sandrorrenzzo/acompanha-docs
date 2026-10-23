@@ -2,7 +2,7 @@
 
 O responsável deixa de perguntar à professora e consulta sozinho, a qualquer hora, o progresso do filho. Primeiro o sistema mostra a semana: última aula, tarefas e provas e trabalhos. Se quiser, ele abre o relatório do mês ou do bimestre. Se alguma matéria aparece como "Precisa de atenção", a família age: ajuda em casa ou conversa com a professora. A professora não precisa mais responder de memória; só escreve a observação pedagógica do período, que aparece no relatório.
 
-O modelo está em [02-consulta-do-progresso-to-be.bpmn](../bpmn/02-consulta-do-progresso-to-be.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
+O modelo está em [02-consulta-do-progresso-to-be.bpmn](02-consulta-do-progresso-to-be.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
 
 Participam do processo o responsável, o Sistema Acompanha e a professora.
 

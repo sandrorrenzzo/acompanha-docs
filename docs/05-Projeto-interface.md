@@ -48,9 +48,41 @@ São protótipos usados no design de interface para sugerir a estrutura de um si
 
 ## Protótipo interativo
 
-Apresente o protótipo interativo das telas da aplicação, permitindo a navegação simulada pelo sistema. Esse protótipo deve refletir as funcionalidades e interações planejadas, e servir como base para validação com usuários e equipe.  
+O protótipo está no Figma: [Acompanha – Protótipo](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=11-709).
 
-> **Exemplo:** inserir link para o protótipo no Figma, MarvelApp, InvisionApp, etc.
+O sistema tem duas frentes:
+
+- **Professora (desktop, telas D00 a D12):** registra aulas, tarefas, provas e trabalhos, notas, avaliações diagnósticas e observações, e cadastra alunos e escolas. Todas as telas usam o mesmo topo (componente `Topo/Professora`), com as abas Hoje, Alunos e Escolas e os atalhos de registro (Aula, Tarefa, Prova ou trabalho, Diagnóstica, Observação).
+- **Responsável (mobile, telas M00 a M05):** aceita o termo de consentimento, escolhe o filho e consulta a semana e o relatório de progresso.
+
+Além das telas, a página do Figma tem dois quadros de referência para o desenvolvimento:
+
+- **Componentes:** o topo da professora.
+- **Componentes interativos:** campos (seleção, texto, texto longo), caixas de seleção, grupos de rádio usados em cada tela, botões (primário, secundário, perigo), linhas de lista das telas D01, D02, D04, D10, D11 e M02 e o aviso de tarefa.
+
+O código de cada tela (D00, M00 etc.) é o mesmo usado no nome do quadro no Figma.
+
+| **Código** | **Tela** | **Perfil** | **Figma** |
+| --- | --- | --- | --- |
+| D00 | Login (professora) | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=11-759) |
+| D01 | Hoje (painel) | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=11-780) |
+| D02 | Alunos | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=11-968) |
+| D03 | Novo aluno | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-791) |
+| D04 | Histórico do aluno | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-955) |
+| D05 | Registrar aula | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-1147) |
+| D06 | Nova tarefa | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-1280) |
+| D07 | Prova ou trabalho | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-1387) |
+| D08 | Lançar nota | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-1480) |
+| D09 | Avaliação diagnóstica | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1096) |
+| D10 | Observação do período | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1186) |
+| D11 | Escolas e matérias | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1298) |
+| D12 | Dados e privacidade do aluno | Professora | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1426) |
+| M00 | Login (responsável) | Responsável | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1578) |
+| M01 | Termo de consentimento | Responsável | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1595) |
+| M02 | Escolha do aluno | Responsável | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1623) |
+| M03 | Semana do aluno | Responsável | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1644) |
+| M04 | Relatório de progresso | Responsável | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1687) |
+| M05 | Privacidade | Responsável | [abrir](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1770) |
 
 
 ## Jornada do usuário
@@ -78,32 +110,92 @@ O mapa da jornada do usuário deve contemplar:
 
 ## Interface do sistema
 
-Apresente **todas as interfaces do sistema**, em sua versão final, descrevendo brevemente a função de cada tela.
-
-Dê ênfase especial às telas relacionadas aos processos BPMN já mapeados e documentados no item <a href="04-Modelagem-processos-negocio.md"> Modelagem dos processos de negócio</a>.
+As telas abaixo são as do [protótipo](#protótipo-interativo). As telas ligadas aos processos BPMN estão descritas junto com o processo, conforme a <a href="04-Modelagem-processos-negocio.md"> Modelagem dos processos de negócio</a>.
 
 ### Tela principal do sistema
 
-Descrição da tela principal do sistema.
+#### D01 · Hoje (painel)
 
-> Insira aqui a imagem da tela principal do sistema.
+Primeira tela da professora depois do login. Reúne o que pede ação no dia: tarefas atrasadas, tarefas que vencem até sábado, avisos dos responsáveis (com o botão Conferir), provas e trabalhos dos próximos 7 dias, notas para lançar e alunos em reforço, com o motivo. Pelos botões do topo a professora registra uma aula ou uma nova prova ou trabalho.
+
+> Tela no Figma: [D01 · Hoje (painel)](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=11-780)
 
 ### Telas dos processos BPMN
 
-#### Processo 1
+#### Processo 1 – Provas e trabalhos do colégio
 
-Descrição das telas relativas às atividades do processo 1.
+**D07 · Prova ou trabalho.** A professora cadastra a prova ou trabalho do colégio (tipo, matéria, data, valor). A tela mostra a regra da escola do aluno (por exemplo, "avalia por pontos, com média de 70%") e avisa que a nota pode ser lançada depois. A prova cadastrada passa a aparecer no painel (D01) e na semana do responsável (M03).
 
-> Inserir imagens das telas correspondentes às atividades do processo 1.
+> Tela no Figma: [D07 · Prova ou trabalho](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-1387)
 
-#### Processo 2
+**D08 · Lançar nota.** A professora lança a nota recebida. A tela mostra a regra da escola (pontos ou conceito, e o mínimo esperado) e o resultado da comparação, como "Dentro do esperado". Se a nota não vier, depois de um prazo a prova pode ser marcada como sem nota.
 
-Descrição das telas relativas às atividades do processo 2.
+> Tela no Figma: [D08 · Lançar nota](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-1480)
 
-> Inserir imagens das telas correspondentes às atividades do processo 2.
+**D04 · Histórico do aluno.** Linha do tempo do aluno com aulas, tarefas, provas, faltas e diagnósticas. Mostra o resultado de cada prova, o elogio registrado e o reforço marcado automaticamente quando a prova fica abaixo do esperado ("Sai quando a próxima prova ficar dentro do esperado"). Na lateral: tarefas pendentes, próximas provas e frequência do mês.
+
+> Tela no Figma: [D04 · Histórico do aluno](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-955)
+
+**D06 · Nova tarefa.** Usada para passar as atividades de reforço. Avisa quando o aluno está em reforço na matéria e explica os status da tarefa: pendente, entregue no prazo, entregue com atraso e não entregue. Só a professora muda o status; o aviso do responsável aparece em Hoje (D01).
+
+> Tela no Figma: [D06 · Nova tarefa](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-1280)
+
+#### Processo 2 – Consulta do progresso pelo responsável
+
+**M00 · Login (responsável).** Entrada do responsável por e-mail e senha. Quem esquece a senha pede à professora.
+
+> Tela no Figma: [M00 · Login (responsável)](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1578)
+
+**M02 · Escolha do aluno.** Para quem tem mais de um filho na escolinha. Lista só os alunos com vínculo ativo com o responsável.
+
+> Tela no Figma: [M02 · Escolha do aluno](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1623)
+
+**M03 · Semana do aluno.** O que o sistema mostra primeiro: última aula, tarefas (com status e prazo) e provas e trabalhos da semana. Dá acesso ao relatório do mês.
+
+> Tela no Figma: [M03 · Semana do aluno](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1644)
+
+**M04 · Relatório de progresso.** Relatório do mês ou do bimestre: pendências, frequência, situação por matéria ("Em dia" ou "Precisa de atenção", com a nota e a comparação com o esperado), o que foi trabalhado, números das tarefas do mês e a observação da professora.
+
+> Tela no Figma: [M04 · Relatório de progresso](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1687)
+
+**D10 · Observação do período.** A professora escreve a observação pedagógica do período, que aparece no relatório (M04). A tela mostra o resumo do mês do aluno para apoiar a escrita. Se ficar vazia, o relatório mostra "Sem observação neste período".
+
+> Tela no Figma: [D10 · Observação do período](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1186)
 
 ### Demais telas do sistema
 
-Apresente e descreva brevemente as demais telas que compõem o sistema, mesmo que não estejam vinculadas diretamente a processos BPMN.
+**D00 · Login (professora).** Entrada da professora. Quem esquece a senha fala com a Nide.
 
-> Inserir imagens das demais telas.
+> Tela no Figma: [D00 · Login (professora)](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=11-759)
+
+**D02 · Alunos.** Lista dos alunos ativos com ano, escola, responsável, reforço, pendências e situação.
+
+> Tela no Figma: [D02 · Alunos](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=11-968)
+
+**D03 · Novo aluno.** Cadastro do aluno (escola, ano, matérias acompanhadas), do responsável e do consentimento. Um responsável com outro filho na escolinha reaproveita o mesmo login. Sem consentimento registrado, o aluno fica inativo.
+
+> Tela no Figma: [D03 · Novo aluno](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-791)
+
+**D05 · Registrar aula.** Registro da aula: presença, matérias trabalhadas, conteúdo e observação. Na lateral, a última aula e as pendências do aluno.
+
+> Tela no Figma: [D05 · Registrar aula](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=12-1147)
+
+**D09 · Avaliação diagnóstica.** Registro do que a professora observou na aprendizagem, sem nota e sem laudos médicos. Permite marcar reforço manual, que só sai quando a professora desmarca. Mostra as avaliações anteriores do aluno.
+
+> Tela no Figma: [D09 · Avaliação diagnóstica](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1096)
+
+**D11 · Escolas e matérias.** Cadastro das escolas com a regra de avaliação de cada uma (pontos com média ou conceito com mínimo) e das matérias. Escola sem regra usa média de 60%.
+
+> Tela no Figma: [D11 · Escolas e matérias](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1298)
+
+**D12 · Dados e privacidade do aluno.** Dados do responsável, registro do consentimento (data, forma, versão do termo), acessos recentes e as ações de LGPD: redefinir senha, atender pedido do responsável (bloqueio imediato e eliminação em até 15 dias) e encerrar matrícula (eliminação 6 meses depois).
+
+> Tela no Figma: [D12 · Dados e privacidade do aluno](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1426)
+
+**M01 · Termo de consentimento.** Exibido no primeiro acesso do responsável: quais dados, para quê, quem vê, por quanto tempo e quais são os direitos dele. O responsável aceita para continuar.
+
+> Tela no Figma: [M01 · Termo de consentimento](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1595)
+
+**M05 · Privacidade.** Explica ao responsável como os dados do filho são tratados e como pedir para revogar o consentimento ou excluir os dados.
+
+> Tela no Figma: [M05 · Privacidade](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=14-1770)

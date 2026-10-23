@@ -2,7 +2,7 @@
 
 Os responsáveis pedem notícias com frequência, a maioria todos os dias. A professora responde de memória, porque não há registro, e muitas vezes só no fim da aula ou do dia, porque está atendendo os alunos. O responsável só sabe o que perguntou.
 
-O modelo está em [02-consulta-do-progresso-as-is.bpmn](../bpmn/02-consulta-do-progresso-as-is.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
+O modelo está em [02-consulta-do-progresso-as-is.bpmn](02-consulta-do-progresso-as-is.bpmn), em BPMN 2.0 no formato do bpmn.io. Para abrir ou editar, arraste o arquivo para o [demo.bpmn.io](https://demo.bpmn.io) ou abra no Camunda Modeler.
 
 Participam do processo o responsável e a professora. Nenhuma atividade usa sistema: todas são tarefas manuais.
 

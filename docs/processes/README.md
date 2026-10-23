@@ -1,1 +1,1 @@
-Detalhamento dos processos modelados. Os diagramas BPMN ficam na pasta [bpmn](../bpmn/).
+Detalhamento dos processos modelados. Os diagramas BPMN (`.bpmn`) ficam nesta mesma pasta.
