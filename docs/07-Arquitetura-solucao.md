@@ -168,83 +168,6 @@ erDiagram
 > - [Como fazer um modelo relacional](https://www.youtube.com/watch?v=DWWIREUkxOI)
 
 
-### Modelo físico
-
-Insira aqui o script de criação das tabelas do banco de dados.
-
-Veja um exemplo:
-
-```sql
-CREATE TABLE employees (
-    emp_no      INT             NOT NULL,
-    birth_date  DATE            NOT NULL,
-    first_name  VARCHAR(14)     NOT NULL,
-    last_name   VARCHAR(16)     NOT NULL,
-    gender      ENUM ('M','F')  NOT NULL,    
-    hire_date   DATE            NOT NULL,
-    PRIMARY KEY (emp_no)
-);
-
-CREATE TABLE departments (
-    dept_no     CHAR(4)         NOT NULL,
-    dept_name   VARCHAR(40)     NOT NULL,
-    PRIMARY KEY (dept_no),
-    UNIQUE  KEY (dept_name)
-);
-
-CREATE TABLE dept_manager (
-   emp_no       INT             NOT NULL,
-   dept_no      CHAR(4)         NOT NULL,
-   from_date    DATE            NOT NULL,
-   to_date      DATE            NOT NULL,
-   FOREIGN KEY (emp_no)  REFERENCES employees (emp_no)    ON DELETE CASCADE,
-   FOREIGN KEY (dept_no) REFERENCES departments (dept_no) ON DELETE CASCADE,
-   PRIMARY KEY (emp_no,dept_no)
-); 
-
-CREATE TABLE dept_emp (
-    emp_no      INT             NOT NULL,
-    dept_no     CHAR(4)         NOT NULL,
-    from_date   DATE            NOT NULL,
-    to_date     DATE            NOT NULL,
-    FOREIGN KEY (emp_no)  REFERENCES employees   (emp_no)  ON DELETE CASCADE,
-    FOREIGN KEY (dept_no) REFERENCES departments (dept_no) ON DELETE CASCADE,
-    PRIMARY KEY (emp_no,dept_no)
-);
-
-CREATE TABLE titles (
-    emp_no      INT             NOT NULL,
-    title       VARCHAR(50)     NOT NULL,
-    from_date   DATE            NOT NULL,
-    to_date     DATE,
-    FOREIGN KEY (emp_no) REFERENCES employees (emp_no) ON DELETE CASCADE,
-    PRIMARY KEY (emp_no,title, from_date)
-); 
-
-CREATE TABLE salaries (
-    emp_no      INT             NOT NULL,
-    salary      INT             NOT NULL,
-    from_date   DATE            NOT NULL,
-    to_date     DATE            NOT NULL,
-    FOREIGN KEY (emp_no) REFERENCES employees (emp_no) ON DELETE CASCADE,
-    PRIMARY KEY (emp_no, from_date)
-); 
-
-CREATE OR REPLACE VIEW dept_emp_latest_date AS
-    SELECT emp_no, MAX(from_date) AS from_date, MAX(to_date) AS to_date
-    FROM dept_emp
-    GROUP BY emp_no;
-
--- Shows only the current department for each employee
-CREATE OR REPLACE VIEW current_dept_emp AS
-    SELECT l.emp_no, dept_no, l.from_date, l.to_date
-    FROM dept_emp d
-        INNER JOIN dept_emp_latest_date l
-        ON d.emp_no=l.emp_no AND d.from_date=l.from_date AND l.to_date = d.to_date;
-```
-Esse script deverá ser incluído em um arquivo .sql na pasta [de scripts SQL](../src/db).
-
-
 ## Tecnologias
 
 | **Dimensão** | **Tecnologia** |
@@ -258,7 +181,20 @@ Esse script deverá ser incluído em um arquivo .sql na pasta [de scripts SQL](.
 
 ## Hospedagem
 
-A definir pelo grupo. A hospedagem precisa ter custo zero (R02) e não pode hibernar (RNF04).
+| **Camada** | **Serviço** |
+| --- | --- |
+| Front-end (React) | [Vercel](https://vercel.com), plano gratuito |
+| API (C# com ASP.NET Core) | [Render](https://render.com), plano gratuito, em contêiner Docker |
+| Banco de dados (PostgreSQL) | [Neon](https://neon.com), plano gratuito |
+| Monitor de disponibilidade | [UptimeRobot](https://uptimerobot.com), plano gratuito |
+
+Todos os serviços estão no plano gratuito, o que atende ao custo zero exigido pelo R02, durante e depois da disciplina.
+
+- O front-end é publicado na Vercel como site estático e chama a API por HTTPS (RNF06).
+- No plano gratuito do Render, a API hiberna depois de 15 minutos sem requisições. Para atender ao RNF04 (sem hibernar e sem partida a frio longa), o UptimeRobot chama um endpoint de saúde da API a cada 5 minutos. As horas gratuitas do Render cobrem um serviço ligado o mês inteiro.
+- O mesmo monitor mede a disponibilidade mensal exigida pelo RNF04.
+- O Neon suspende o banco quando ele fica sem uso e o religa sozinho na próxima conexão, em menos de 1 segundo, o que fica dentro do limite de partida a frio do RNF04. O endpoint de saúde chamado pelo monitor não consulta o banco, para não gastar as horas de processamento gratuitas do Neon.
+- O backup diário do RNF09 é feito por uma rotina agendada (GitHub Actions) que gera um `pg_dump` criptografado e o guarda por 7 dias.
 
 ## Qualidade de software
 
@@ -266,7 +202,19 @@ Conceituar qualidade é uma tarefa complexa, mas ela pode ser vista como um mét
 
 No contexto do desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem atendidas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, esse nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software. Com base nessas características e nas respectivas subcaracterísticas, identifique as subcaracterísticas que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software, considerando alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão à equipe avaliar os objetos de interesse.
+A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características de qualidade para produtos de software, cada uma dividida em subcaracterísticas. O grupo escolheu as subcaracterísticas que mais pesam para os dois públicos do Acompanha: professoras com pouco tempo e responsáveis que consultam pelo celular, lidando com dados de crianças. Cada uma está ligada a um requisito não funcional da <a href="02-Especificacao.md#requisitos-não-funcionais">Especificação</a>, que já traz o critério de medição.
+
+| **Característica** | **Subcaracterística** | **Justificativa** | **Métrica** | **Meta** |
+| --- | --- | --- | --- | --- |
+| Usabilidade | Operabilidade | A rotina das professoras é corrida; se registrar uma aula der trabalho, o registro deixa de ser feito, como aconteceu com a planilha (RNF01). | Tempo para registrar uma aula, medido com as professoras | Até 1 minuto, em uma única tela |
+| Usabilidade | Apreensibilidade | Os responsáveis têm de 3 a 5 de facilidade com tecnologia e não recebem treinamento. | Percentual de responsáveis que encontram a situação do filho por matéria sem ajuda, no primeiro acesso | 100% dos responsáveis testados |
+| Usabilidade | Acessibilidade | A consulta é feita no celular, por pessoas de idades variadas (RNF11). | Tamanho mínimo de texto e contraste nas telas do responsável | Texto ≥ 16 px; contraste nível AA das WCAG 2.1 |
+| Eficiência de desempenho | Comportamento em relação ao tempo | O painel e o relatório são as telas mais usadas e precisam abrir rápido (RNF03). | Percentual de requisições do painel, do histórico e do relatório respondidas em até 2 s, com 30 alunos e 1 ano de registros | ≥ 95% |
+| Confiabilidade | Disponibilidade | Se o sistema estiver fora do ar no horário da escolinha, a professora volta a anotar de memória (RNF04). | Tempo no ar no horário de funcionamento, medido por monitor externo | ≥ 99% ao mês |
+| Confiabilidade | Recuperabilidade | Perder os registros apagaria o histórico dos alunos (RNF09). | Testes de restauração do backup bem-sucedidos | Pelo menos 1 antes da entrega |
+| Segurança | Confidencialidade | Os dados são de crianças, e o responsável só pode ver os próprios filhos (RNF07, LGPD art. 14). | Percentual de endpoints com dados de aluno cobertos pelo teste automatizado de autorização por vínculo | 100% |
+| Segurança | Autenticidade | Só quem tem login pode acessar, e a senha não pode vazar (RNF05 e RNF06). | Senhas guardadas com hash e salt; páginas servidas por HTTPS | 100% das senhas e 100% das páginas |
+| Segurança | Responsabilização | É preciso saber quem acessou ou alterou os dados de um aluno (RNF08). | Percentual de acessos e alterações em dados de aluno com registro de quem, quando e o quê | 100%, guardados por 6 meses |
 
 > **Links úteis**:
 > - [ISO/IEC 25010:2011 - Systems and Software Engineering — Systems and Software Quality Requirements and Evaluation (SQuaRE) — System and Software Quality Models](https://www.iso.org/standard/35733.html/)

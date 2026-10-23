@@ -108,7 +108,10 @@ As regras de negócio e as personas são validadas com a parceira, Ieronides Gon
 | Projeto de interface | Figma | [Acompanha – Protótipo](https://www.figma.com/design/KjtSsah133BDvt0Nvc8JpL/Acompanha---Prot%C3%B3tipo?node-id=11-709) |
 | Modelagem de processos (BPMN) | bpmn.io | [demo.bpmn.io](https://demo.bpmn.io) |
 | Diagrama entidade-relacionamento | draw.io | [app.diagrams.net](https://app.diagrams.net) |
-| Hospedagem | A definir | — |
+| Hospedagem do front-end | Vercel | [vercel.com](https://vercel.com) |
+| Hospedagem da API | Render | [render.com](https://render.com) |
+| Banco de dados | Neon | [neon.com](https://neon.com) |
+| Monitor de disponibilidade | UptimeRobot | [uptimerobot.com](https://uptimerobot.com) |
 
 Tecnologias previstas para a aplicação, conforme a <a href="07-Arquitetura-solucao.md">Arquitetura da solução</a>:
 

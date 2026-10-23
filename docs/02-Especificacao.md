@@ -211,7 +211,7 @@ O projeto está restrito aos itens apresentados na tabela a seguir.
 
 ## Tratamento de dados (LGPD)
 
-- **Papéis.** A Divertindo a Mente, representada pela proprietária, é a controladora dos dados. Os provedores de hospedagem, ainda a definir, atuarão como operadores. Durante o desenvolvimento, a equipe usará apenas dados fictícios; dados reais só entram no sistema depois da implantação e do consentimento.
+- **Papéis.** A Divertindo a Mente, representada pela proprietária, é a controladora dos dados. Os provedores de hospedagem (Vercel, Render e Neon) atuarão como operadores. Durante o desenvolvimento, a equipe usará apenas dados fictícios; dados reais só entram no sistema depois da implantação e do consentimento.
 - **Melhor interesse da criança (art. 14, caput).** Os dados são usados exclusivamente para o acompanhamento pedagógico do próprio aluno. Não há uso para publicidade, ranking entre alunos ou compartilhamento com terceiros.
 - **Base legal e consentimento (art. 14, §1º e §5º).** O grupo adota o consentimento específico e destacado de pelo menos um dos pais ou responsável legal, coletado no cadastro por termo assinado ou por aceite no primeiro acesso, e registrado no sistema com data e versão do termo (registro do consentimento). O aluno só fica ativo depois desse registro. A ANPD admite outras bases legais para dados de crianças (Enunciado CD/ANPD nº 1/2023), mas o consentimento é o caminho mais simples e transparente para este caso.
 - **Minimização.** Não coletamos CPF, endereço, fotos ou diagnósticos de saúde dos alunos; as dificuldades são descritas só em termos pedagógicos.

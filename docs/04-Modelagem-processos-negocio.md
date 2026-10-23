@@ -52,7 +52,7 @@ O que fica fora da solução está listado em [fora do escopo](02-Especificacao.
 
 ## Indicadores de desempenho
 
-Os indicadores usam apenas dados que o sistema já registra nos dois processos e no relatório de progresso. Todas as informações necessárias para gerá-los devem estar no diagrama de classes.
+Os indicadores usam apenas dados que o sistema já registra nos dois processos e no relatório de progresso. Todas as informações necessárias para gerá-los devem estar no <a href="07-Arquitetura-solucao.md#modelo-de-dados">modelo de dados</a>.
 
 | **Indicador** | **Objetivos** | **Descrição** | **Fonte de dados** | **Fórmula de cálculo** |
 | --- | --- | --- | --- | --- |
