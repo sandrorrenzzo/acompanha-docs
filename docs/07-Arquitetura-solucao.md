@@ -2,11 +2,26 @@
 
 <span style="color:red">Pré-requisitos: <a href="05-Projeto-interface.md"> Projeto de interface</a></span>
 
-Defina como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.  
+O Acompanha é uma aplicação web em três camadas: front-end em React, back-end (API REST) em C# com ASP.NET Core e banco de dados PostgreSQL. A professora e o responsável usam o sistema pelo navegador, sem instalar nada.
 
-Apresente um diagrama que ilustre a visão estrutural do sistema, mostrando como os componentes (front-end, back-end, banco de dados, serviços externos etc.) se organizam e se comunicam, bem como onde estão hospedados.  
+![Arquitetura da solução](images/arquitetura-acompanha.svg)
 
-![Arquitetura da Solução](images/arquitetura.png)
+## Funções do sistema
+
+- **Acesso:** login da professora e do responsável; cada um só vê o que o seu papel permite.
+- **Cadastros:** alunos, responsáveis, escolas (com a forma de avaliação) e matérias.
+- **Registros da professora:** aulas, tarefas, provas e trabalhos com nota, avaliações diagnósticas e observação do período.
+- **Reforço automático:** quando uma nota fica abaixo do esperado pela escola, o aluno entra em reforço na matéria.
+- **Consultas da professora:** painel de pendências e histórico do aluno.
+- **Consultas do responsável:** semana do filho e relatório de progresso.
+
+## Como o sistema executa as funções
+
+1. O usuário usa as telas do front-end React no navegador.
+2. O front-end chama a API por HTTPS e recebe os dados em JSON.
+3. A API confere o login e o papel. O responsável só recebe dados dos próprios filhos, e essa checagem é feita na API, não na tela.
+4. A API aplica as regras de negócio (por exemplo, comparar a nota com o esperado pela escola) e lê ou grava no PostgreSQL.
+5. A API devolve a resposta e o front-end mostra o resultado.
 
 ## Diagrama de classes
 
@@ -20,16 +35,18 @@ Elabore o diagrama de classes utilizando uma ferramenta de modelagem apropriada.
 
 ##  Modelo de dados
 
-O desenvolvimento da solução proposta requer a existência de bases de dados que permitam realizar o cadastro de dados e os controles associados aos processos identificados, assim como suas recuperações.
+Um único modelo de dados atende os dois processos mapeados: [provas e trabalhos do colégio](processes/processo-1-to-be.md) e [consulta do progresso pelo responsável](processes/processo-2-to-be.md).
 
 ### Modelo conceitual 
 
-O Diagrama Entidade-Relacionamento (DER), em notação Peter Chen, representa de forma conceitual como as entidades (objetos ou conceitos do minimundo) se relacionam entre si. O DER deve incluir entidades, atributos, relacionamentos, cardinalidade, conforme as regras do minimundo. Deve ser elaborado um único DER que suporte todos os processos mapeados, de modo a garantir uma base de dados integrada. O modelo também deve representar, quando aplicável, o controle de acesso dos usuários (partes interessadas nos processos) de acordo com os papéis definidos nos modelos de processo de negócio.
+Diagrama Entidade-Relacionamento (DER) em notação Peter Chen. O arquivo [der-acompanha.drawio.svg](images/der-acompanha.drawio.svg) pode ser editado no [draw.io](https://app.diagrams.net).
 
-Elabore o modelo utilizando uma ferramenta de modelagem apropriada.
+![Diagrama Entidade-Relacionamento do Acompanha](images/der-acompanha.drawio.svg "DER do Acompanha em notação Peter Chen.")
 
-![Exemplo de um modelo conceitual](images/modelo_conceitual.PNG "Exemplo de modelo conceitual.")
----
+- **USUARIO** é quem entra no sistema. O atributo `papel` diz se é professora ou responsável e define o que cada um pode acessar.
+- **ALUNO** é o centro do modelo: tem um responsável, estuda em uma escola e acompanha várias matérias.
+- **AULA, TAREFA, PROVA_TRABALHO, REFORCO e AVALIACAO_DIAGNOSTICA** são os registros do aluno, cada um ligado a uma matéria.
+- **OBSERVACAO_PERIODO** é o texto da professora que aparece no relatório do responsável.
 
 > **Links úteis**:
 > - [Notação de Peter Chen para modelagem conceitual de banco de dados](https://www.youtube.com/watch?v=_y31cFi_ByY)
@@ -37,12 +54,114 @@ Elabore o modelo utilizando uma ferramenta de modelagem apropriada.
 
 ### Modelo relacional
 
-O modelo relacional corresponde à representação dos dados, organizando as informações em tabelas (relações) compostas por linhas (tuplas) e colunas (atributos), juntamente com as restrições de integridade, chaves primárias e chaves estrangeiras.
+Modelo lógico derivado do DER. **PK** é chave primária, **FK** é chave estrangeira e **UK** é valor único. Os relacionamentos M:N (*acompanha* e *trabalha*) viram as tabelas `aluno_materia` e `aula_materia`.
 
-Elabore o modelo utilizando uma ferramenta de modelagem apropriada.
+```mermaid
+erDiagram
+    usuario ||--o{ aluno : "responde por"
+    escola ||--o{ aluno : "estuda em"
+    aluno ||--|{ aluno_materia : acompanha
+    materia ||--o{ aluno_materia : ""
+    usuario ||--o{ aula : ministra
+    aluno ||--o{ aula : assiste
+    aula ||--o{ aula_materia : trabalha
+    materia ||--o{ aula_materia : ""
+    aluno ||--o{ tarefa : faz
+    materia ||--o{ tarefa : exercita
+    aluno ||--o{ prova_trabalho : presta
+    materia ||--o{ prova_trabalho : cobre
+    aluno ||--o{ reforco : "precisa de"
+    materia ||--o{ reforco : em
+    aluno ||--o{ avaliacao_diagnostica : "passa por"
+    materia ||--o{ avaliacao_diagnostica : sobre
+    aluno ||--o{ observacao_periodo : recebe
 
-![Exemplo de um modelo relacional](images/modelo_relacional.PNG "Exemplo de modelo relacional.")
----
+    usuario {
+        int id_usuario PK
+        varchar nome
+        varchar email UK
+        varchar senha_hash
+        varchar papel "professora ou responsavel"
+    }
+    escola {
+        int id_escola PK
+        varchar nome
+        varchar forma_avaliacao "pontos ou conceito"
+        varchar nota_minima
+    }
+    materia {
+        int id_materia PK
+        varchar nome UK
+    }
+    aluno {
+        int id_aluno PK
+        int id_responsavel FK
+        int id_escola FK
+        varchar nome
+        varchar ano_escolar
+        varchar situacao "inativo, ativo ou encerrado"
+        date data_consentimento
+    }
+    aluno_materia {
+        int id_aluno PK, FK
+        int id_materia PK, FK
+    }
+    aula {
+        int id_aula PK
+        int id_aluno FK
+        int id_professora FK
+        date data
+        varchar presenca "presente ou falta"
+        text observacao
+    }
+    aula_materia {
+        int id_aula PK, FK
+        int id_materia PK, FK
+        text conteudo
+    }
+    tarefa {
+        int id_tarefa PK
+        int id_aluno FK
+        int id_materia FK
+        varchar descricao
+        varchar origem "colegio ou reforco"
+        date prazo
+        varchar status
+    }
+    prova_trabalho {
+        int id_prova PK
+        int id_aluno FK
+        int id_materia FK
+        varchar tipo "prova ou trabalho"
+        date data
+        numeric valor
+        varchar nota "pontos ou conceito"
+        varchar resultado "dentro ou abaixo do esperado"
+        text elogio
+    }
+    reforco {
+        int id_reforco PK
+        int id_aluno FK
+        int id_materia FK
+        varchar tipo "automatico ou manual"
+        varchar motivo
+        date data_inicio
+        date data_fim
+    }
+    avaliacao_diagnostica {
+        int id_diagnostica PK
+        int id_aluno FK
+        int id_materia FK
+        date data
+        text dificuldades
+    }
+    observacao_periodo {
+        int id_observacao PK
+        int id_aluno FK
+        varchar periodo
+        text texto
+    }
+```
 
 > **Links úteis**:
 > - [Criando um modelo relacional - documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/12.0.0?topic=designer-creating-relational-model)
@@ -128,27 +247,18 @@ Esse script deverá ser incluído em um arquivo .sql na pasta [de scripts SQL](.
 
 ## Tecnologias
 
-Descreva as tecnologias utilizadas para implementar a solução proposta. Liste todas as tecnologias envolvidas, incluindo linguagens de programação, frameworks, bibliotecas, serviços web, IDEs, ferramentas de apoio e quaisquer outros recursos relevantes para o desenvolvimento.  
-
-Apresente também um diagrama ou figura que ilustre a visão operacional, mostrando como as tecnologias interagem entre si durante o uso do sistema, desde a ação do usuário até a obtenção da resposta.
-
-| **Dimensão**   | **Tecnologia**  |
-| ---            | ---             |
-| Front-end      | HTML + CSS + JS + React |
-| Back-end       | Node.js         |
-| SGBD           | MySQL           |
-| Deploy         | Vercel          |
-
+| **Dimensão** | **Tecnologia** |
+| --- | --- |
+| Front-end | React |
+| Back-end | C# com ASP.NET Core Web API |
+| Acesso a dados | Entity Framework Core |
+| SGBD | PostgreSQL |
+| Versionamento | Git + GitHub |
+| Protótipo | Figma |
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foram realizados.
-
-> **Links úteis**:
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando seu site no Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+A definir pelo grupo. A hospedagem precisa ter custo zero (R02) e não pode hibernar (RNF04).
 
 ## Qualidade de software
 

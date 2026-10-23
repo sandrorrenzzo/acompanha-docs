@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="280" viewBox="0 60 1400 280" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="400" fill="#ffffff"/>
+
+  <!-- Usuários -->
+  <rect x="40" y="110" width="230" height="70" rx="10" fill="#eef4fb" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="155" y="140" font-size="16" font-weight="bold" text-anchor="middle">Professora</text>
+  <text x="155" y="162" font-size="13" text-anchor="middle">navegador do computador</text>
+  <rect x="40" y="220" width="230" height="70" rx="10" fill="#eef4fb" stroke="#1f3a5f" stroke-width="1.5"/>
+  <text x="155" y="250" font-size="16" font-weight="bold" text-anchor="middle">Responsável</text>
+  <text x="155" y="272" font-size="13" text-anchor="middle">navegador do celular</text>
+
+  <!-- Servidor -->
+  <rect x="380" y="80" width="980" height="240" rx="14" fill="#fafafa" stroke="#555" stroke-width="1.5" stroke-dasharray="7,4"/>
+  <text x="400" y="106" font-size="14" font-weight="bold" fill="#333">Servidor na nuvem</text>
+
+  <rect x="420" y="140" width="260" height="120" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="550" y="185" font-size="17" font-weight="bold" text-anchor="middle">Front-end</text>
+  <text x="550" y="210" font-size="14" text-anchor="middle">React</text>
+  <text x="550" y="232" font-size="12" fill="#555" text-anchor="middle">telas do sistema</text>
+
+  <rect x="760" y="140" width="260" height="120" rx="10" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="890" y="185" font-size="17" font-weight="bold" text-anchor="middle">Back-end (API REST)</text>
+  <text x="890" y="210" font-size="14" text-anchor="middle">C# ASP.NET Core</text>
+  <text x="890" y="232" font-size="12" fill="#555" text-anchor="middle">login, permissões e regras</text>
+
+  <path d="M 1110 150 v 100 a 90 18 0 0 0 180 0 v -100" fill="#ede7f6" stroke="#4527a0" stroke-width="1.5"/>
+  <ellipse cx="1200" cy="150" rx="90" ry="18" fill="#ede7f6" stroke="#4527a0" stroke-width="1.5"/>
+  <text x="1200" y="210" font-size="17" font-weight="bold" text-anchor="middle">Banco de dados</text>
+  <text x="1200" y="232" font-size="14" text-anchor="middle">PostgreSQL</text>
+
+  <line x1="272" y1="150" x2="418" y2="190" stroke="#333" stroke-width="1.6" marker-start="url(#seta)" marker-end="url(#seta)"/>
+  <line x1="272" y1="255" x2="418" y2="215" stroke="#333" stroke-width="1.6" marker-start="url(#seta)" marker-end="url(#seta)"/>
+  <text x="300" y="207" font-size="13" font-weight="bold" fill="#7a5200">HTTPS</text>
+  <line x1="682" y1="200" x2="758" y2="200" stroke="#333" stroke-width="1.6" marker-start="url(#seta)" marker-end="url(#seta)"/>
+  <text x="720" y="190" font-size="12" fill="#555" text-anchor="middle">JSON</text>
+  <line x1="1022" y1="200" x2="1108" y2="200" stroke="#333" stroke-width="1.6" marker-start="url(#seta)" marker-end="url(#seta)"/>
+  <text x="1065" y="190" font-size="12" fill="#555" text-anchor="middle">SQL</text>
+
+</svg>
